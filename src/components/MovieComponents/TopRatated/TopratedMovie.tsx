@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { DiscoverMovieRequest } from "../../../API/DiscoverMovie";
 import { useMovieDiscoverQuery } from "../../../redux/RTQK/KinoList";
 import {
     selectApiLanguage,
@@ -15,6 +16,7 @@ const TopratedMovie = () => {
     const apiParam = useAppSelector(selectorApiOptions);
     const language = useAppSelector(selectApiLanguage);
     const [data, setData] = useState<DiscoveryMovieResponse | null>(null);
+    const [isError, setError] = useState(false);
     // const { data, isError, isLoading } = useMovieDiscoverQuery({
     //     param: {
     //         ...apiParam,
@@ -24,20 +26,35 @@ const TopratedMovie = () => {
     //     },
     //     url: "",
     // });
+
     useEffect(() => {
-        fetch(
-            "https://api.themoviedb.org/3/discover/movie?language=en-US&api_key=48bce37aca39640849c2b1ca0861e9b9&sort_by=vote_average.desc&vote_count.gte=1000"
-        )
-            .then((data) => data.json())
-            .then((data) => setData(data));
+        (async function () {
+            const [response, error] = await DiscoverMovieRequest("", {
+                ...apiParam,
+                language: language,
+                sort_by: "vote_average.desc",
+                "vote_count.gte": 1000,
+            });
+            if (error) {
+                setError(error);
+                return;
+            }
+            setData(response);
+        })();
     }, []);
+
+    if (!data) {
+        return null;
+    }
     const topRatedList = data?.results.map((el, id) => (
         <DiscoverCard movie={el} id={id + 1} key={id} />
     ));
 
     return (
         <div className={s.wrapper}>
-            {/* <ErrorPopUp isError text={"Error, cant get top rated movie."} /> */}
+            {isError && (
+                <ErrorPopUp isError text={"Error, cant get top rated movie."} />
+            )}
             {topRatedList}
         </div>
     );
