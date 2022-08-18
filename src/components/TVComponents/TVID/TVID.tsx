@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { FC, useEffect } from "react";
+import React, { FC, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 import { useTvQuery } from "../../../redux/RTQK/KinoList";
@@ -35,6 +35,16 @@ const TVID: FC<TVIDType> = () => {
         dispatch(setActiveSlide(data as unknown as SlideType));
     }, [data]);
     const { t } = useTranslation();
+    const ref = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        if (ref.current) {
+            ref.current.scrollIntoView({
+                block: "start",
+                behavior: "smooth",
+            });
+        }
+    }, [id]);
+
     if (isLoading) {
         return (
             <div className={s.tvWrapper}>
@@ -44,7 +54,7 @@ const TVID: FC<TVIDType> = () => {
     }
 
     return (
-        <div className={classNames(s.tvWrapper, s.loadingEnd)}>
+        <div className={classNames(s.tvWrapper, s.loadingEnd)} ref={ref}>
             {data && (
                 <>
                     <TVHeader data={data} />

@@ -38,7 +38,7 @@ const BasicInfo: FC<BasicInfoType> = ({ data }) => {
                     <Rating
                         name="customized-10"
                         onChange={() => {}}
-                        defaultValue={data.vote_average}
+                        value={data.vote_average}
                         max={10}
                     />
                 </span>

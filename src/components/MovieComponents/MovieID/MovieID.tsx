@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useMovieQuery } from "../../../redux/RTQK/KinoList";
 import {
@@ -35,6 +35,15 @@ const MovieID: FC<MovieIDType> = () => {
     }, [data]);
     const { t } = useTranslation();
 
+    const ref = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        if (ref.current) {
+            ref.current.scrollIntoView({
+                block: "start",
+                behavior: "smooth",
+            });
+        }
+    }, [param]);
     if (isLoading) {
         return (
             <div className={s.movieWrapper}>
@@ -44,7 +53,7 @@ const MovieID: FC<MovieIDType> = () => {
     }
 
     return (
-        <div className={classNames(s.movieWrapper, s.loadingEnd)}>
+        <div className={classNames(s.movieWrapper, s.loadingEnd)} ref={ref}>
             {data && (
                 <>
                     <MovieHeader data={data} />
