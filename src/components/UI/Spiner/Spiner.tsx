@@ -3,7 +3,7 @@ import React from "react";
 const Spiner = () => {
     return (
         <svg
-            xmlns="http://www.w3.org/2000/svg"
+            xmlns="https://www.w3.org/2000/svg"
             style={{
                 margin: "auto",
                 background: "none",
