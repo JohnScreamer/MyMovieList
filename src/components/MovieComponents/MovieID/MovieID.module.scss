@@ -1,0 +1,33 @@
+@import "./../../../static/SCSS/Mixin.scss";
+.infoBlock {
+    display: flex;
+}
+.movieWrapper {
+    max-width: 950px;
+    width: 100%;
+    padding: 0 40px;
+    @include adaptive-value("padding", 40, 15);
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .infoBlock {
+        display: flex;
+        flex-direction: column;
+    }
+    .movieWrapper {
+        padding-bottom: 50px;
+    }
+}
+.loadingEnd {
+    animation: isLoadingEndAnime 1s ease 0s 1 normal forwards;
+}
+@keyframes isLoadingEndAnime {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

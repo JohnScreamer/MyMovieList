@@ -1,0 +1,28 @@
+@import "./../../../static/SCSS/Mixin.scss";
+.searchBlockWrapper {
+    min-width: 200px;
+    margin-right: 15px;
+}
+.btnContainer {
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    bottom: 0px;
+}
+@media (max-width: 768px) {
+    .searchBlockWrapper {
+        max-width: none;
+        width: 768px;
+        margin-right: 0;
+        input {
+            width: 100%;
+        }
+    }
+    .btnWrapper {
+        display: flex;
+        label {
+            width: 100%;
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@import "./../../../../static/SCSS/Mixin.scss";
+.imgList {
+    margin-top: 10px;
+    background: var(--color-tab-basic);
+    d .slider {
+    }
+}
+.slide {
+    position: relative;
+
+    max-width: 200px;
+    &:hover {
+        .zoom {
+            display: block;
+            animation: myAnim 0.5s ease 0s 1 normal forwards;
+        }
+    }
+}
+.zoom {
+    display: none;
+}
+@media (max-width: 768px) {
+    .zoom {
+        display: block;
+    }
+}

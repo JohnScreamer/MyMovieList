@@ -1,0 +1,62 @@
+@import "./../../../static/SCSS/Mixin.scss";
+.wrapper {
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    padding: 15px;
+    height: 100%;
+    top: 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(11, 2, 1, 0.382);
+
+    .btnClose {
+        background: none;
+        border: none;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        cursor: pointer;
+        top: 20px;
+        background: rgba(176, 169, 169, 0.813);
+        border-radius: 50px;
+        padding: 4px;
+
+        right: 20px;
+        svg {
+            display: inline-block;
+
+            fill: white;
+
+            &:hover {
+                fill: #ec1a62;
+            }
+        }
+    }
+    .container {
+        animation: myAnim 1s ease 0s 1 normal forwards;
+        background: rgba(91, 84, 84, 0.899);
+        max-width: 90%;
+        max-height: 90%;
+        position: relative;
+        padding: 15px;
+        margin: 15px;
+        color: white;
+        overflow-y: auto;
+
+        z-index: 100;
+    }
+}
+
+@keyframes myAnim {
+    0% {
+        transform: translateY(-250px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

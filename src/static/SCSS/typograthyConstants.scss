@@ -1,0 +1,31 @@
+.App {
+    --fs-tiny: 12;
+    --fs-tinyM: 8;
+    ///////////////
+    --fs-small: 14;
+    --fs-smallM: 10;
+    ///////////////
+    --fs-basic: 16;
+    --fs-basicM: 11;
+    /////////////////
+    --fs-medium: 18;
+    --fs-mediumM: 12;
+    /////////////////
+    --fs-bold: 20;
+    --fs-boldM: 14;
+    ////////////////
+    --fs-big: 26;
+    --fs-bigM: 16;
+    ///////////////
+    --fs-max: 35;
+    --fs-maxM: 20;
+}
+@include adaptive-value("font-size", 12, 8);
+@include adaptive-value("font-size", 14, 10);
+@include adaptive-value("font-size", 16, 11);
+@include adaptive-value("font-size", 18, 12);
+@include adaptive-value("font-size", 20, 14);
+@include adaptive-value("font-size", 26, 16);
+@include adaptive-value("font-size", 32, 18);
+@include adaptive-value("font-size", 35, 20);
+@include adaptive-value("font-size", 65, 40);

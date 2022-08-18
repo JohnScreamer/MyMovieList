@@ -1,0 +1,58 @@
+//------- adaptive
+@function rem($px) {
+    $result: calc($px/ 16) + rem;
+    @return $result;
+}
+
+@function em($px, $current: 16) {
+    $result: calc($px / $current) + em;
+    @return $result;
+}
+
+@function percent($px, $from) {
+    $result: calc(($px/$from) * 100%);
+    @return $result;
+}
+
+// /----mixin--
+
+$maxWidthContainer: 950;
+$maxWidth: 1920;
+
+@mixin adaptive-value($property, $startSize, $minSize, $type: 1) {
+    $addSize: $startSize - $minSize;
+
+    @if $type==1 {
+        @media (max-width: #{$maxWidthContainer +px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+        }
+    } @else if $type==2 {
+        #{$property}: $startSize + px;
+
+        @media (min-width: calc(#{$maxWidthContainer + px})) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{maxWidth - 320}));
+        }
+    } @else {
+        #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{maxWidth - 320}));
+    }
+}
+// ------template----
+%flex-element-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%br10 {
+    border-radius: 10px;
+}
+
+%bsd {
+    box-shadow: 0px 5px 10px rgba(114, 163, 121, 0.7);
+}
+
+%mw {
+    max-width: 1302px;
+    margin: 0 auto;
+    padding: 0 15px;
+}

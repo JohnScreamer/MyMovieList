@@ -1,0 +1,106 @@
+@import "./../../../../static/SCSS/Mixin.scss";
+.basicWrapper {
+    .imgWrapper {
+        position: relative;
+    }
+    h1 {
+        font-size: 35px;
+        @include adaptive-value("font-size", 35, 20);
+        font-weight: 900;
+        padding: 5px;
+    }
+    .mainInfo {
+        display: flex;
+        background: var(--color-tab-basic);
+        align-items: flex-start;
+
+        img {
+            max-width: 300px;
+            @include adaptive-value("max-width", 300, 150);
+        }
+        .infoSection {
+            padding: 10px;
+            width: 100%;
+            div {
+                padding: 5px 0;
+                border-bottom: 1px solid var(--color-border);
+            }
+            b {
+                font-size: 16px;
+                @include adaptive-value("font-size", 16, 11);
+                font-weight: 400;
+                display: inline-block;
+                margin-bottom: 5px;
+            }
+            span {
+                font-size: 18px;
+                @include adaptive-value("font-size", 18, 12);
+                font-weight: 600;
+                display: flex;
+                align-self: flex-start;
+            }
+            .filmList {
+                display: flex;
+                flex-wrap: wrap;
+
+                a {
+                    display: block;
+                    margin: 5px 0;
+                    text-decoration: underline;
+                    &:hover {
+                        color: var(--color-accent);
+                    }
+                }
+            }
+        }
+    }
+}
+.biography {
+    background: var(--color-tab-basic);
+    padding: 10px;
+
+    h4 {
+        font-size: 20px;
+        @include adaptive-value("font-size", 20, 14);
+        font-weight: 600;
+        padding: 5px;
+    }
+    p {
+        line-height: 120%;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .active {
+        display: block;
+    }
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+
+        li {
+        }
+    }
+}
+.bioBtn {
+    background: none;
+    width: 100%;
+    color: var(--color-text-default);
+    background: var(--color-search-non-active);
+
+    padding: 10px;
+
+    &:hover {
+        background: var(--color-search);
+    }
+}
+@media (max-width: 768px) {
+    .basicWrapper {
+        .mainInfo .infoSection .filmList {
+            display: none;
+        }
+    }
+}

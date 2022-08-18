@@ -1,0 +1,48 @@
+@import "./../../../../static/SCSS/Mixin.scss";
+.slideWrapper {
+    margin: 30px;
+    @include adaptive-value("margin", 30, 15);
+    margin-left: 60px;
+    @include adaptive-value("margin-left", 60, 15);
+    h1 {
+        font-size: 60px;
+        @include adaptive-value("font-size", 60, 25);
+        font-weight: 900;
+        margin-bottom: 18px;
+        @include adaptive-value("margin-bottom", 18, 12);
+
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    span {
+        display: block;
+        margin-bottom: 18px;
+        @include adaptive-value("margin-bottom", 18, 12);
+    }
+    p {
+        font-size: 18px;
+        @include adaptive-value("font-size", 18, 13);
+        max-width: 500px;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    button {
+        margin-top: 10px;
+        background: none;
+        padding: 10px;
+        color: var(--color-text-default);
+        background: none;
+        border: 1px solid var(--color-accent);
+        &:hover {
+            color: white;
+            background: var(--color-accent);
+        }
+    }
+}

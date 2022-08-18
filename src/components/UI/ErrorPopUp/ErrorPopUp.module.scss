@@ -1,0 +1,55 @@
+@import "./../../../static//SCSS/Mixin.scss";
+.error,
+.basic {
+    min-width: 100px;
+    min-height: 50px;
+    background: var(--color-tab-basic);
+    position: fixed;
+    z-index: 1500;
+    bottom: 100px;
+    border-radius: 0px 0px 10px 10px;
+    overflow: hidden;
+    color: white;
+    right: 10%;
+
+    padding: 15px;
+    padding-right: 45px;
+    .btnClose {
+        &:hover {
+            svg {
+                fill: white;
+            }
+        }
+        padding: 2px;
+        background: none;
+        position: absolute;
+        right: 0%;
+
+        top: 0%;
+    }
+    animation: myAnim 1s ease 0s 1 normal forwards;
+}
+.error {
+    background: red;
+}
+.header {
+    display: flex;
+    align-items: center;
+    span {
+        font-size: 18px;
+        font-weight: 900;
+        display: block;
+        margin-right: 5px;
+    }
+}
+@keyframes myAnim {
+    0% {
+        opacity: 0;
+        transform: translateX(250px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

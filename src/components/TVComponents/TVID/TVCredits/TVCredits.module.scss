@@ -1,0 +1,32 @@
+@import "./../../../../static/SCSS/Mixin.scss";
+.creditsWrapper {
+    ul {
+        background: var(--color-tab-basic);
+        max-width: 870px;
+    }
+    h6 {
+        padding: 5px;
+        width: 100%;
+        font-size: 20px;
+        @include adaptive-value("font-size", 20, 14);
+        background-color: var(--color-tab-second);
+    }
+    button {
+        display: block;
+        width: 100%;
+        background: none;
+        color: var(--color-text-default);
+        padding: 10px;
+        font-size: 16px;
+        @include adaptive-value("font-size", 16, 11);
+        &:hover {
+            background: var(--color-search);
+        }
+        background: var(--color-search-non-active);
+    }
+}
+.allCredits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

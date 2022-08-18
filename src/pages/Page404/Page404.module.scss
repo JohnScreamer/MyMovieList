@@ -1,0 +1,71 @@
+@import "./../../static/SCSS/Mixin.scss";
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    background: black;
+    .cinema {
+        position: absolute;
+        z-index: 5;
+        object-fit: cover;
+        object-position: top;
+        width: 100%;
+        height: 100%;
+    }
+
+    .imgWrapper {
+        display: block;
+        height: 300px;
+        position: relative;
+        top: -135px;
+        z-index: 4;
+        img {
+            height: 100%;
+            margin: 0 auto;
+        }
+    }
+    .sign {
+        width: 100%;
+        text-align: center;
+        height: 250px;
+        background: var(--color-tab-basic2);
+        border-bottom: 5px solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        top: -135px;
+        a {
+            color: white;
+            margin-top: 16px;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 222;
+            display: inline-block;
+            padding: 10px;
+            background: var(--color-accent);
+
+            border-radius: 10px;
+            &:hover {
+                background: var(--color-tab-basic2);
+            }
+        }
+        h1 {
+            color: white;
+            font-size: 65px;
+            margin-top: 15px;
+            @include adaptive-value("font-size", 65, 40);
+        }
+        h2 {
+            color: white;
+            font-size: 45px;
+            @include adaptive-value("font-size", 45, 25);
+        }
+    }
+}

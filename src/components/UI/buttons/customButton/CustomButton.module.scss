@@ -1,0 +1,25 @@
+@import "./../../../../static/SCSS/Mixin.scss";
+.btn {
+    width: 100%;
+    padding: 25px;
+    @include adaptive-value("padding", 25, 15);
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    @include adaptive-value("font-size", 20, 14);
+    background: #ec1a62;
+    z-index: 100;
+    display: inline-block;
+    &:hover {
+        background: radial-gradient(
+            circle,
+            rgba(63, 94, 251, 0.5872724089635855) 0%,
+            rgba(252, 70, 107, 0.6965161064425771) 100%
+        );
+    }
+}
+@media (max-width: 768px) {
+    .btn {
+        position: absolute;
+        bottom: 50px;
+    }
+}

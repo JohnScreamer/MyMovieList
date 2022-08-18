@@ -1,0 +1,13 @@
+@import "./../../../../static/SCSS/Mixin.scss";
+.headerWrapper {
+    margin-bottom: 35px;
+    @include adaptive-value("margin-bottom", 35, 15);
+    h1 {
+        font-size: 35px;
+        @include adaptive-value("font-size", 35, 20);
+    }
+    h2 {
+        font-size: 18px;
+        @include adaptive-value("font-size", 18, 12);
+    }
+}

@@ -1,0 +1,27 @@
+@import "./../../../../static/SCSS/Mixin.scss";
+
+.btnWrapper {
+    display: block;
+    margin: 20px 0;
+    input {
+        display: none;
+    }
+    input:checked + h3 {
+        border: 1px solid var(--color-accent);
+        opacity: 1;
+    }
+    h3 {
+        display: inline-block;
+        font-size: 20px;
+        @include adaptive-value("font-size", 20, 14);
+        max-width: 250px;
+        width: 100%;
+        &:hover {
+            opacity: 0.9;
+        }
+        cursor: pointer;
+        padding: 5px;
+        border: 2px solid none;
+        opacity: 0.5;
+    }
+}

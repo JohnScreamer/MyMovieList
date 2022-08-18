@@ -1,0 +1,22 @@
+@import "./../../../static/SCSS/Mixin.scss";
+
+.wrapper {
+    background: none;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    display: inline-block;
+    background: rgba(127, 128, 125, 0.363);
+    padding: 10px;
+    &:hover {
+        background: rgba(160, 161, 157, 0.363);
+        .icon {
+            fill: var(--color-accent);
+        }
+    }
+    .icon {
+        fill: white;
+        width: 25px;
+        height: 25px;
+    }
+}

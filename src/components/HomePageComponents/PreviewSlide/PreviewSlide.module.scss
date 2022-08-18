@@ -1,0 +1,9 @@
+@import "./../../../static/SCSS/Mixin.scss";
+
+.prevSlide {
+    min-height: 320px;
+    @include adaptive-value("min-height", 320, 170);
+}
+.skeletonWrapper {
+    padding-left: 25px;
+}

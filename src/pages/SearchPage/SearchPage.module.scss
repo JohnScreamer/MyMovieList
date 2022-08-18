@@ -1,0 +1,15 @@
+@import "./../../static/SCSS/Mixin.scss";
+
+.searchContainer {
+    display: flex;
+    position: relative;
+    padding-bottom: 55px;
+    height: 100%;
+    margin: 50px;
+    @include adaptive-value("margin", 50, 15);
+}
+@media (max-width: 768px) {
+    .searchContainer {
+        flex-wrap: wrap;
+    }
+}

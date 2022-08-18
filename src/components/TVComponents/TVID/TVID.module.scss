@@ -1,0 +1,44 @@
+@import "./../../../static/SCSS/Mixin.scss";
+.infoBlock {
+    display: flex;
+}
+.tvWrapper {
+    max-width: 950px;
+    width: 100%;
+    padding: 0 40px;
+    @include adaptive-value("padding-left", 40, 15);
+    @include adaptive-value("padding-right", 40, 15);
+
+    margin: 0 auto;
+}
+.overview {
+    background: var(--color-tab-basic);
+    padding: 10px;
+    h3 {
+        font-size: 22px;
+        @include adaptive-value("font-size", 22, 16);
+        margin-bottom: 10px;
+        font-weight: 900;
+    }
+}
+@media (max-width: 768px) {
+    .infoBlock {
+        display: block;
+        flex-direction: column;
+    }
+    .tvWrapper {
+        padding-bottom: 100px;
+    }
+}
+.loadingEnd {
+    animation: isLoadingEndAnime 1s ease 0s 1 normal forwards;
+}
+@keyframes isLoadingEndAnime {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,31 @@
+.langWrapper {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    img {
+    }
+    &:hover {
+        background: rgba(131, 121, 119, 0.272);
+    }
+    span {
+        margin-top: 5px;
+        display: block;
+    }
+    .langList {
+        position: absolute;
+        bottom: 50px;
+        display: inline-flex;
+        flex-direction: column;
+        height: 100px;
+        background: var(--color-background);
+    }
+}
+.icon {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.active {
+    border: 1px solid var(--color-text-default);
+}

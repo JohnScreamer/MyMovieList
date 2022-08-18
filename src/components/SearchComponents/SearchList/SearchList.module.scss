@@ -1,0 +1,59 @@
+@import "./../../../static/SCSS/Mixin.scss";
+.listWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    svg {
+        fill: var(--color-text-default);
+    }
+    button {
+        color: var(--color-text-default);
+    }
+    .list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        ul {
+            display: flex;
+            flex-direction: column;
+            max-width: 1000px;
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 768px) {
+    .listWrapper {
+        margin-bottom: 50px;
+    }
+}
+.find {
+    text-align: end;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.notFind {
+    margin-top: 100px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .icon {
+        width: 150px;
+        height: 150px;
+    }
+    h3 {
+        font-size: 26px;
+        @include adaptive-value("font-size", 26, 16);
+    }
+}

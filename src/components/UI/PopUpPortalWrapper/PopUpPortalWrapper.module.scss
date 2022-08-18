@@ -1,0 +1,16 @@
+.wrapper {
+    position: fixed;
+    bottom: 0px;
+    background: salmon;
+    padding: 10px;
+}
+.container {
+    width: 100px;
+    height: 100px;
+    background: salmon;
+    position: relative;
+    .btnClose {
+        top: 0%;
+        position: absolute;
+    }
+}

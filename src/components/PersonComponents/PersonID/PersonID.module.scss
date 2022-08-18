@@ -1,0 +1,20 @@
+.personWrapper {
+    max-width: 950px;
+    margin: 0 auto;
+    .container {
+        margin: 0 15px;
+    }
+    padding-bottom: 100px;
+}
+.loadingEnd {
+    animation: isLoadingEndAnime 1s ease 0s 1 normal forwards;
+}
+@keyframes isLoadingEndAnime {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

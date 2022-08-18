@@ -1,0 +1,124 @@
+@import "./../../static/SCSS/Mixin.scss";
+.sideBar {
+    display: flex;
+}
+.navWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    z-index: 10;
+    position: fixed;
+    max-width: 60px;
+
+    a {
+        display: block;
+        width: 100%;
+        padding: 30px 0;
+        &:hover {
+            background: rgba(131, 121, 119, 0.272);
+        }
+    }
+    div {
+        margin-top: 5px;
+        text-align: center;
+    }
+}
+
+.icon {
+    fill: var(--color-text-default);
+    display: flex;
+    margin: 0 auto;
+}
+@media (max-width: 768px) {
+    .navWrapper {
+        display: none;
+    }
+}
+.closeSVG {
+    display: block;
+    width: 100%;
+    padding: 30px 0;
+
+    &:hover {
+        cursor: pointer;
+        background: rgba(131, 121, 119, 0.272);
+    }
+}
+.close {
+    animation: myAnimClose 1s ease 0s 1 normal forwards;
+}
+@keyframes myAnimClose {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-250px);
+    }
+}
+.open {
+    animation: myAnim 1s ease 0s 1 normal forwards;
+}
+@keyframes myAnim {
+    0% {
+        opacity: 0;
+        transform: translateX(-250px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.burgerWrapper {
+    max-width: 70px;
+    position: fixed;
+    z-index: 1550;
+    padding: 20px;
+    // background: var(--color-background);
+    @include adaptive-value("padding", 20, 15);
+    opacity: 0;
+    &:hover {
+        cursor: pointer;
+        background: rgba(131, 121, 119, 0.272);
+        svg {
+            fill: var(--color-accent);
+        }
+    }
+}
+.openBurger {
+    animation: myAnimOpenBurger 1.5s ease 0s 1 normal forwards;
+}
+.closeBurger {
+    animation: myAnimCloseBurger 0.5s ease 0s 1 normal forwards;
+}
+@keyframes myAnimOpenBurger {
+    0% {
+        opacity: 0;
+        transform: translateY(-111px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes myAnimCloseBurger {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(-111px);
+    }
+}
+@media (max-width: 768px) {
+    .sideBar {
+        display: none;
+    }
+}

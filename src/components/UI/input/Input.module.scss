@@ -1,0 +1,11 @@
+@import "./../../../static/SCSS/Mixin.scss";
+.input {
+    padding: 10px;
+    width: 100%;
+    font-size: 26px;
+    @include adaptive-value("font-size", 26, 16);
+    border-bottom: 2px solid var(--color-border);
+    color: var(--color-text-default);
+    background: none;
+    font-weight: 700;
+}

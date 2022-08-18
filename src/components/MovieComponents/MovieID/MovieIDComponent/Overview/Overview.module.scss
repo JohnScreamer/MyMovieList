@@ -1,0 +1,35 @@
+@import "./../../../../../static/SCSS/Mixin.scss";
+.overview {
+    background: var(--color-tab-basic);
+    padding: 10px;
+    h3 {
+        font-size: 20px;
+        @include adaptive-value("font-size", 20, 14);
+        margin-bottom: 10px;
+        font-weight: 900;
+    }
+    p {
+        line-height: 120%;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .active {
+        display: block;
+    }
+}
+
+.overviewBtn {
+    background: none;
+    width: 100%;
+    color: var(--color-text-default);
+    background: var(--color-search-non-active);
+
+    padding: 10px;
+
+    &:hover {
+        background: var(--color-search);
+    }
+}

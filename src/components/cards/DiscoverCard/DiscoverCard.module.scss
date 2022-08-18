@@ -1,0 +1,64 @@
+@import "./.././.././../static/SCSS/Mixin.scss";
+.cardWrapper {
+    padding: 35px;
+    // @include adaptive-value("padding", 55, 15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    h2 {
+        font-size: 32px;
+        @include adaptive-value("font-size", 32, 22);
+        margin-bottom: 15px;
+        font-weight: 900;
+    }
+    b {
+        margin-bottom: 20px;
+        font-size: 14px;
+        @include adaptive-value("font-size", 14, 10);
+    }
+    .rating {
+        font-size: 20px;
+        @include adaptive-value("font-size", 20, 14);
+        right: 25px;
+        padding: 20px;
+        @include adaptive-value("padding", 20, 10);
+        background: var(--color-tab-basic2);
+        border-radius: 50%;
+        bottom: 5%;
+        position: absolute;
+    }
+    .num {
+        font-size: 40px;
+        @include adaptive-value("font-size", 40, 25);
+        top: 5%;
+
+        position: absolute;
+    }
+    p {
+        font-size: 16px;
+        @include adaptive-value("font-size", 16, 11);
+        width: 40vw;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .vote {
+        display: block;
+        margin-top: 25px;
+        b {
+            font-size: 18px;
+            @include adaptive-value("font-size", 18, 13);
+        }
+    }
+}
+@media (max-width: 768px) {
+    .cardWrapper {
+        p {
+            width: 75%;
+        }
+    }
+}

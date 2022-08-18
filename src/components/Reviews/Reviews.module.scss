@@ -1,0 +1,16 @@
+@import "./../../static/SCSS/Mixin.scss";
+.title {
+    font-size: 20px;
+    @include adaptive-value("font-size", 20, 14);
+    margin: 5px 0;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    button {
+        color: var(--color-text-default);
+    }
+}
+.reviews {
+    padding-bottom: 75px;
+}

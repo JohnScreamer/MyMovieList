@@ -1,58 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import "./App.scss";
+import {
+    selectActiveSlide,
+    selectIsSlideActive,
+    selectorTheme,
+} from "./selectors/GlobalOptions";
+import { MEDIUM_BACKGROUND_URL } from "./static/constants/URL";
+import { useAppSelector } from "./static/hooks/hooks";
+import { Container } from "./components/Container/Container";
+import Wrapper from "./components/Wrapper/Wrapper";
+import Content from "./components/Content/Content";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
-  );
+    const currentTheme = useAppSelector(selectorTheme);
+    const activeSlide = useAppSelector(selectActiveSlide);
+    const isSlideActive = useAppSelector(selectIsSlideActive);
+    let bg = "";
+    if (isSlideActive) {
+        //@ts-ignore
+        bg = activeSlide?.backdrop_path?.startsWith("/static/")
+            ? //@ts-ignore
+              activeSlide?.backdrop_path
+            : MEDIUM_BACKGROUND_URL + activeSlide?.backdrop_path;
+    }
+
+    return (
+        <div className="App" data-theme={currentTheme}>
+            <Wrapper bg={bg}>
+                <Container>
+                    <Content />
+                </Container>
+            </Wrapper>
+        </div>
+    );
 }
 
 export default App;

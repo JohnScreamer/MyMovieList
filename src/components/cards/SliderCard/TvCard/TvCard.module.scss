@@ -1,0 +1,23 @@
+@import "./../../../../static/SCSS/Mixin.scss";
+.cardWrapper {
+    width: 200px;
+    @include adaptive-value("width", 200, 150);
+    height: 300px;
+    @include adaptive-value("height", 300, 200);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 10px;
+
+    h3 {
+        display: none;
+    }
+    &:hover {
+        h3 {
+            display: block;
+        }
+    }
+}
