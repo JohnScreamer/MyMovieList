@@ -55,7 +55,7 @@ const TopratedMovie = () => {
             {isError && (
                 <ErrorPopUp isError text={"Error, cant get top rated movie."} />
             )}
-            {topRatedList}
+            {topRatedList?.length ? topRatedList : <Spiner />}
         </div>
     );
 };
