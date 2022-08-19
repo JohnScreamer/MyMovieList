@@ -41,7 +41,7 @@ const TopratedMovie = () => {
             }
             setData(response);
         })();
-    }, []);
+    }, [language]);
 
     const topRatedList = data?.results.map((el, id) => (
         <DiscoverCard movie={el} id={id + 1} key={id} />
