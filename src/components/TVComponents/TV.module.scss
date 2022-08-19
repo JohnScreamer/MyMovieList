@@ -51,6 +51,8 @@
             text-transform: uppercase;
         }
         img {
+            transition: all 0.5s 0s ease;
+
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -89,6 +91,7 @@
             img {
                 width: 100%;
                 height: 100%;
+                transition: all 0.5s 0s ease;
 
                 object-fit: cover;
                 object-position: center;
