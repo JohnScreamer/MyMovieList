@@ -1,19 +1,19 @@
 .langWrapper {
     width: 100%;
     height: 100%;
+
     cursor: pointer;
     img {
     }
-    &:hover {
-        background: rgba(131, 121, 119, 0.272);
-    }
+
     span {
+        display: flex;
         margin-top: 5px;
-        display: block;
+        text-align: center;
     }
     .langList {
-        position: absolute;
-        bottom: 50px;
+        position: relative;
+        bottom: 0px;
         display: inline-flex;
         flex-direction: column;
         height: 100px;
@@ -22,10 +22,20 @@
 }
 .icon {
     cursor: pointer;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 10px;
+    &:hover {
+        background: var(--color-tab-basic);
+    }
     width: 100%;
     height: 100%;
 }
 .active {
     border: 1px solid var(--color-text-default);
+}
+.list {
 }

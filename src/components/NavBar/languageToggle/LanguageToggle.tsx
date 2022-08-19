@@ -78,7 +78,7 @@ const LanguageToggle: FC<LanguageToggleType> = ({ mobile }) => {
                 <span>{t("language")}</span>
             </div>
             {langStatus && (
-                <div>
+                <div className={s.langList}>
                     <img
                         className={currentLanguage === "ua" ? s.active : ""}
                         src="https://img.icons8.com/fluency/48/000000/ukraine-circular.png"
