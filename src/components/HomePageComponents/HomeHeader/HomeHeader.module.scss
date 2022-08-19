@@ -7,7 +7,7 @@
         font-size: 26px;
         @include adaptive-value("font-size", 26, 16);
         margin: 25px;
-        @include adaptive-value("margin", 25, 10);
+        @include adaptive-value("margin", 25, 20);
         border-bottom: 1px solid none;
         &:hover {
             border-bottom: 1px solid var(--color-accent);
@@ -17,7 +17,6 @@
 @media (max-width: 768px) {
     .header {
         padding: 25px;
-        @include adaptive-value("padding", 25, 15);
         margin-left: 0;
     }
 }
