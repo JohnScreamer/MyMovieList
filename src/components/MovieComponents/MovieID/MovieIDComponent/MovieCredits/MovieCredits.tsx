@@ -69,7 +69,7 @@ const MovieCredits: FC<MovieCreditsType> = ({ id }) => {
                         navigation={true}
                         mousewheel={true}
                         keyboard={true}
-                        modules={[Navigation, Mousewheel, Keyboard]}
+                        modules={[Navigation, Keyboard]}
                         className="mySwiper"
                     >
                         {credits}

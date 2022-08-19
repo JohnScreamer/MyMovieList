@@ -18,6 +18,7 @@
     }
     p {
         font-size: 18px;
+
         @include adaptive-value("font-size", 18, 13);
         max-width: 500px;
 

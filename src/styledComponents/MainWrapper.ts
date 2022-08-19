@@ -5,11 +5,11 @@ type MainWrapperType = {
 };
 const rotate = keyframes`
   from {
-    opacity: 0;
+    transform:scale(0.8);
   }
 
   to {
-    opacity: 1;
+    transform:scale(1);
   }
 `;
 export const MainWrapper = styled.main`
@@ -31,3 +31,4 @@ export const MainWrapper = styled.main`
         ),
         url(${(props: MainWrapperType) => props.bg}) 0 0 / cover no-repeat fixed;
 `;
+// animation: ${rotate} 1s ease 0s 1 normal forwards;
