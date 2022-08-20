@@ -35,7 +35,7 @@ export const UA = {
     knowFor: "Відомий як:",
     popularRating: "Рейтинг популярності:",
     popularFilm: "Популярні фільми:",
-    biography: "Біографія:",
+    biography: "Біографія",
     filmography: "Фільмографія",
     sortBy: "Сортувати по:",
     rating: "рейтингу",

@@ -9,7 +9,6 @@ import { DiscoveryMovie } from "../../../Types/DiscoveryType";
 import DiscoverCard from "../../cards/DiscoverCard/DiscoverCard";
 import ErrorPopUp from "../../UI/ErrorPopUp/ErrorPopUp";
 import Spiner from "../../UI/Spiner/Spiner";
-import s from "./AuthorMovieTop.module.scss";
 
 const AuthorMovieTop = () => {
     const apiParam = useAppSelector(selectorApiOptions);
@@ -26,7 +25,7 @@ const AuthorMovieTop = () => {
     ));
 
     return (
-        <div className={s.wrapper}>
+        <div>
             {isLoading ? <Spiner /> : MovieList}{" "}
             {isError && (
                 <ErrorPopUp

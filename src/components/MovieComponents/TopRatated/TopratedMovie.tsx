@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { DiscoverMovieRequest } from "../../../API/DiscoverMovie";
-import { useMovieDiscoverQuery } from "../../../redux/RTQK/KinoList";
 import {
     selectApiLanguage,
     selectorApiOptions,
-    selectorLanguage,
 } from "../../../selectors/GlobalOptions";
 import { useAppSelector } from "../../../static/hooks/hooks";
 import { DiscoveryMovieResponse } from "../../../Types/DiscoveryType";
 import DiscoverCard from "../../cards/DiscoverCard/DiscoverCard";
 import ErrorPopUp from "../../UI/ErrorPopUp/ErrorPopUp";
 import Spiner from "../../UI/Spiner/Spiner";
-import s from "./TopratedMovie.module.scss";
 const TopratedMovie = () => {
     const apiParam = useAppSelector(selectorApiOptions);
     const language = useAppSelector(selectApiLanguage);
@@ -48,7 +45,7 @@ const TopratedMovie = () => {
     ));
 
     return (
-        <div className={s.wrapper}>
+        <div>
             {isError && (
                 <ErrorPopUp isError text={"Error, cant get top rated movie."} />
             )}

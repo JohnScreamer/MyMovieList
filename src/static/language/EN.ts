@@ -35,7 +35,7 @@ export const EN = {
     knowFor: "Know for:",
     popularRating: "Popular rating:",
     popularFilm: "Popular film:",
-    biography: "Biography:",
+    biography: "Biography",
     filmography: "Filmography",
     sortBy: "Sort by:",
     rating: "rating",

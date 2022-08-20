@@ -13,9 +13,9 @@ import { SlideType } from "../../../Types/common";
 import Overview from "../../MovieComponents/MovieID/MovieIDComponent/Overview/Overview";
 import Reviews from "../../Reviews/Reviews";
 import MovieTVSceleton from "../../skeleton/MovieTVSceleton";
+import Poster from "../../UI/COMMON/Poster/Poster";
 import ErrorPopUp from "../../UI/ErrorPopUp/ErrorPopUp";
 import BasicInfo from "./BasicInfo/BasicInfo";
-import PosterTV from "./PosterTV/PosterTV";
 import Similar from "./Similar/Similar";
 import TVCredits from "./TVCredits/TVCredits";
 import TVHeader from "./TVHeader/TVHeader";
@@ -59,7 +59,7 @@ const TVID: FC<TVIDType> = () => {
                 <>
                     <TVHeader data={data} />
                     <div className={s.infoBlock}>
-                        <PosterTV data={data} />
+                        <Poster tv={data} />
                         <BasicInfo data={data} />
                     </div>
                     <Overview tv={data} />

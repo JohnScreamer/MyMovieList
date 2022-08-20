@@ -60,3 +60,10 @@
         transform: translateY(0);
     }
 }
+@media (max-width: 768px) {
+    .langWrapper {
+        display: flex;
+        height: 100%;
+        justify-content: center;
+    }
+}

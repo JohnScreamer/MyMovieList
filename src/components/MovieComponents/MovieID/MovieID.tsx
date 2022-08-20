@@ -10,7 +10,6 @@ import BasicInfo from "./MovieIDComponent/BasicInfo/BasicInfo";
 import MovieCredits from "./MovieIDComponent/MovieCredits/MovieCredits";
 import MovieHeader from "./MovieIDComponent/MovieHeader/MovieHeader";
 import s from "./MovieID.module.scss";
-import PosterMovie from "./MovieIDComponent/PosterMovie/PosterMovie";
 import Similar from "./MovieIDComponent/Similar/Similar";
 import { setActiveSlide } from "../../../redux/slice/GlobalOptionsSlice";
 import { SlideType } from "../../../Types/common";
@@ -20,6 +19,7 @@ import { useTranslation } from "react-i18next";
 import Reviews from "../../Reviews/Reviews";
 import Overview from "./MovieIDComponent/Overview/Overview";
 import ErrorPopUp from "../../UI/ErrorPopUp/ErrorPopUp";
+import Poster from "../../UI/COMMON/Poster/Poster";
 type MovieIDType = {};
 const MovieID: FC<MovieIDType> = () => {
     const param = useParams().id || "";
@@ -58,7 +58,7 @@ const MovieID: FC<MovieIDType> = () => {
                 <>
                     <MovieHeader data={data} />
                     <div className={s.infoBlock}>
-                        <PosterMovie data={data} />
+                        <Poster movie={data} />
                         <BasicInfo data={data} />
                     </div>
                     <Overview movie={data} />

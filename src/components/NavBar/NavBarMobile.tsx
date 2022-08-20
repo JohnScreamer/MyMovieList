@@ -49,8 +49,8 @@ const NavBar = () => {
                     <NavLink to={"/"}>
                         <svg
                             className={s.icon}
-                            width="28"
-                            height="28"
+                            width="24"
+                            height="24"
                             viewBox="0 0 28 28"
                             fill="none"
                             xmlns="https://www.w3.org/2000/svg"
@@ -69,8 +69,8 @@ const NavBar = () => {
                     <NavLink to={"/search"}>
                         <svg
                             className={s.icon}
-                            width="28"
-                            height="28"
+                            width="24"
+                            height="24"
                             viewBox="0 0 22 22"
                             fill="none"
                             xmlns="https://www.w3.org/2000/svg"
@@ -81,7 +81,7 @@ const NavBar = () => {
                                 d="M8.72974 16.9595C4.18458 16.9595 0.500008 13.2749 0.500008 8.72973C0.500008 4.18458 4.18458 0.5 8.72974 0.5C13.2749 0.5 16.9595 4.18458 16.9595 8.72973C16.9595 10.6957 16.2701 12.5006 15.12 13.916L21.2506 20.0467C21.5831 20.3791 21.5831 20.9182 21.2506 21.2506C20.9182 21.5831 20.3791 21.5831 20.0467 21.2506L13.916 15.12C12.5006 16.2701 10.6957 16.9595 8.72974 16.9595ZM8.72973 15.2568C12.3345 15.2568 15.2568 12.3345 15.2568 8.72973C15.2568 5.12495 12.3345 2.2027 8.72973 2.2027C5.12496 2.2027 2.20271 5.12495 2.20271 8.72973C2.20271 12.3345 5.12496 15.2568 8.72973 15.2568Z"
                             />
                         </svg>
-                        <div className={s.text}>{t("search")}</div>
+                        <div className={classNames(s.text,s.search)}>{t("search")}</div>
                     </NavLink>
                 </div>
                 <div className={s.iconWrap}>
