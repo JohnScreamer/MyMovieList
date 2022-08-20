@@ -33,12 +33,8 @@ const LanguageToggle: FC<LanguageToggleType> = ({ mobile }) => {
                 ref={refLang}
                 onClick={handlerLangStatus}
             >
-                <div className={s.icon}>
-                    <LanguageIcon />
-                    <span>{t("language")}</span>
-                </div>
-                {langStatus && (
-                    <div className={s.langListMobile}>
+                {langStatus ? (
+                    <div className={s.langListMobile} id={"lang"}>
                         <img
                             className={currentLanguage === "ua" ? s.active : ""}
                             src="https://img.icons8.com/fluency/48/000000/ukraine-circular.png"
@@ -57,6 +53,11 @@ const LanguageToggle: FC<LanguageToggleType> = ({ mobile }) => {
                                 i18next.changeLanguage("en-US");
                             }}
                         />
+                    </div>
+                ) : (
+                    <div className={s.icon}>
+                        <LanguageIcon />
+                        <span>{t("language")}</span>
                     </div>
                 )}
             </div>
