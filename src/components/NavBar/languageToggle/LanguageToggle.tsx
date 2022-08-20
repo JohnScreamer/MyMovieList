@@ -38,29 +38,25 @@ const LanguageToggle: FC<LanguageToggleType> = ({ mobile }) => {
                     <span>{t("language")}</span>
                 </div>
                 {langStatus && (
-                    <div className={s.container}>
-                        <div className={s.langList}>
-                            <img
-                                className={
-                                    currentLanguage === "ua" ? s.active : ""
-                                }
-                                src="https://img.icons8.com/fluency/48/000000/ukraine-circular.png"
-                                onClick={() => {
-                                    handlerToggleLang("ua");
-                                    i18next.changeLanguage("ua");
-                                }}
-                            />
-                            <img
-                                className={
-                                    currentLanguage === "en-US" ? s.active : ""
-                                }
-                                src="https://img.icons8.com/fluency/48/000000/great-britain-circular.png"
-                                onClick={() => {
-                                    handlerToggleLang("en-US");
-                                    i18next.changeLanguage("en-US");
-                                }}
-                            />
-                        </div>
+                    <div className={s.langListMobile}>
+                        <img
+                            className={currentLanguage === "ua" ? s.active : ""}
+                            src="https://img.icons8.com/fluency/48/000000/ukraine-circular.png"
+                            onClick={() => {
+                                handlerToggleLang("ua");
+                                i18next.changeLanguage("ua");
+                            }}
+                        />
+                        <img
+                            className={
+                                currentLanguage === "en-US" ? s.active : ""
+                            }
+                            src="https://img.icons8.com/fluency/48/000000/great-britain-circular.png"
+                            onClick={() => {
+                                handlerToggleLang("en-US");
+                                i18next.changeLanguage("en-US");
+                            }}
+                        />
                     </div>
                 )}
             </div>

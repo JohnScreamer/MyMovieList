@@ -37,5 +37,10 @@
 .active {
     border: 1px solid var(--color-text-default);
 }
-.list {
+
+.langListMobile {
+    background: var(--color-background);
+    position: absolute;
+    z-index: 5556;
+    bottom: 100px;
 }
