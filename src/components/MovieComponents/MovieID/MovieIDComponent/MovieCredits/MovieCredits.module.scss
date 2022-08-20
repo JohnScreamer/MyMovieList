@@ -4,6 +4,10 @@
     ul {
         background: var(--color-tab-basic);
         max-width: 870px;
+        a {
+            height: 100%;
+            flex-grow: 1;
+        }
     }
 
     h4 {

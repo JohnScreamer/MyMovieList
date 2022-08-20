@@ -9,5 +9,9 @@
     ul {
         background: var(--color-tab-basic);
         display: flex;
+        a {
+            display: block;
+            height: 100%;
+        }
     }
 }

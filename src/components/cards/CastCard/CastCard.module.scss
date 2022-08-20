@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: column;
     width: 175px;
+    flex-grow: 1;
 
     &:hover {
         background: rgba(192, 186, 186, 0.357);
@@ -31,6 +32,7 @@
             display: block;
             height: 100%;
             flex-grow: 1;
+            margin-bottom: auto;
         }
         h3 {
             font-size: 18px;
@@ -38,6 +40,7 @@
             font-weight: 900;
             margin-bottom: 5px;
             height: 100%;
+            flex-grow: 1;
         }
     }
 

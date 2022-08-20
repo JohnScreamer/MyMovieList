@@ -4,14 +4,14 @@
     text-align: center;
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
+
     &:hover {
         background: var(--color-blur-color);
     }
 
     img {
         margin-bottom: 10px;
+        width: 175px;
         height: 260px;
     }
 
@@ -19,10 +19,9 @@
         display: flex;
         flex-direction: column;
         padding: 5px;
-        height: 100%;
         .title {
-            font-size: 18px;
-            @include adaptive-value("font-size", 18, 12);
+            font-size: 16px;
+            @include adaptive-value("font-size", 16, 12);
             font-weight: 600;
 
             display: -webkit-box;
@@ -36,7 +35,6 @@
             font-size: 16px;
             @include adaptive-value("font-size", 16, 11);
             display: block;
-            margin-top: auto;
             padding: 5px;
         }
     }
