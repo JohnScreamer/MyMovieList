@@ -14,8 +14,8 @@ const Img: FC<ImgType> = ({ imgUrl }) => {
         fetch(imgUrl, {
             mode: "cors",
             headers: {
-                "Access-Control-Allow-Origin":
-                    "https://my-movie-list-two.vercel.app",
+                "Access-Control-Allow-Origin": "http://localhost:3000",
+                "Access-Control-Allow-Credentials": "true",
             },
         })
             .then((response) => {
@@ -38,8 +38,8 @@ const Img: FC<ImgType> = ({ imgUrl }) => {
 
     return (
         <>
-            <img src={url} />
-            <ZoomImg url={url} />
+            <img src={imgUrl} />
+            <ZoomImg url={imgUrl} />
         </>
     );
 };
