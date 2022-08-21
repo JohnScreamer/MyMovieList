@@ -28,13 +28,13 @@ const Img: FC<ImgType> = ({ imgUrl }) => {
     //         });
     // }, [imgUrl]);
 
-    if (!url) {
-        return (
-            <div>
-                <Spiner small />
-            </div>
-        );
-    }
+    // if (!url) {
+    //     return (
+    //         <div>
+    //             <Spiner small />
+    //         </div>
+    //     );
+    // }
 
     return (
         <>
