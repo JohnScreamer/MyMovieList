@@ -10,23 +10,23 @@ type ImgType = {
 const Img: FC<ImgType> = ({ imgUrl }) => {
     const param = useAppSelector(selectorApiOptions);
     const [url, setUrl] = useState("");
-    useEffect(() => {
-        fetch(imgUrl, {
-            mode: "cors",
-            headers: {
-                "Access-Control-Allow-Origin": "http://localhost:3000",
-                "Access-Control-Allow-Credentials": "true",
-            },
-        })
-            .then((response) => {
-                console.log(response);
+    // useEffect(() => {
+    //     fetch(imgUrl, {
+    //         mode: "cors",
+    //         headers: {
+    //             "Access-Control-Allow-Origin": "http://localhost:3000",
+    //             "Access-Control-Allow-Credentials": "true",
+    //         },
+    //     })
+    //         .then((response) => {
+    //             console.log(response);
 
-                return response.blob();
-            })
-            .then((image) => {
-                setUrl(URL.createObjectURL(image));
-            });
-    }, [imgUrl]);
+    //             return response.blob();
+    //         })
+    //         .then((image) => {
+    //             setUrl(URL.createObjectURL(image));
+    //         });
+    // }, [imgUrl]);
 
     if (!url) {
         return (
