@@ -11,8 +11,17 @@ const Img: FC<ImgType> = ({ imgUrl }) => {
     const param = useAppSelector(selectorApiOptions);
     const [url, setUrl] = useState("");
     useEffect(() => {
-        fetch(imgUrl, { mode: "no-cors" })
-            .then((response) => response.blob())
+        fetch(imgUrl, {
+            mode: "cors",
+            headers: {
+                "Access-Control-Allow-Origin": "http://localhost:3000",
+            },
+        })
+            .then((response) => {
+                console.log(response);
+
+                return response.blob();
+            })
             .then((image) => {
                 setUrl(URL.createObjectURL(image));
             });
@@ -28,8 +37,8 @@ const Img: FC<ImgType> = ({ imgUrl }) => {
 
     return (
         <>
-            <img src={imgUrl} />
-            <ZoomImg url={imgUrl} />
+            <img src={url} />
+            <ZoomImg url={url} />
         </>
     );
 };
