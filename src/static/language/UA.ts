@@ -64,6 +64,7 @@ export const UA = {
     trendingPerson: "Популярні персони",
     Popular: "Популярні:",
     NOTFOUND: "СТОРІНКУ НЕ ЗНАЙДЕНО",
+    staff: "Персонал",
 };
 
 export const monthUA = [

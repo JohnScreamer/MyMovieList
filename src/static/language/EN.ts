@@ -64,4 +64,5 @@ export const EN = {
     trendingPerson: "Trending person",
     Popular: "Popular:",
     NOTFOUND: "PAGE NOT FOUND",
+    staff: "Staff",
 };

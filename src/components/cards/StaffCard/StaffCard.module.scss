@@ -1,0 +1,37 @@
+@import "./../../../static/SCSS/Mixin.scss";
+.staffWrapper {
+    cursor: pointer;
+    display: flex;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--color-tab-basic);
+    &:hover {
+        &:hover {
+            background: var(--color-blur-color);
+        }
+    }
+    .info {
+        margin-bottom: auto;
+        h2 {
+            font-weight: 900;
+            font-size: 16px;
+        }
+        b {
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+}
+.avatar {
+    overflow: hidden;
+    margin-bottom: 5px;
+    img {
+        width: 75px;
+        height: 75px;
+        border-radius: 50px;
+    }
+}

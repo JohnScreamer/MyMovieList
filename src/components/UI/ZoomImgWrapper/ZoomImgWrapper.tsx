@@ -5,11 +5,9 @@ type ZoomImgWrapperType = {
     img: string;
 };
 const ZoomImgWrapper: FC<ZoomImgWrapperType> = ({ img }) => {
-    const url = SMALL_POSTER_URL + img;
-
     return (
         <div className={s.wrapper}>
-            <img src={url} />
+            <img src={img} />
         </div>
     );
 };

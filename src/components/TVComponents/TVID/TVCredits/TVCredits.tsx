@@ -21,6 +21,7 @@ import { useTranslation } from "react-i18next";
 import ErrorPopUp from "../../../UI/ErrorPopUp/ErrorPopUp";
 import qs from "qs";
 import { useLocation, useNavigate } from "react-router-dom";
+import Staff from "../../../UI/COMMON/Staff/Staff";
 type TVCreditsType = {
     id: string;
 };
@@ -59,44 +60,52 @@ const TVCredits: FC<TVCreditsType> = ({ id }) => {
     }
 
     return (
-        <div className={s.creditsWrapper}>
-            {isError && (
-                <ErrorPopUp isError text={"Error, cant get tv credits data."} />
-            )}
-            <div>
-                {" "}
-                <h6>{t("cast")}</h6>
-                <ul>
+        <div className={s.container}>
+            <div className={s.creditsWrapper}>
+                {isError && (
+                    <ErrorPopUp
+                        isError
+                        text={"Error, cant get tv credits data."}
+                    />
+                )}
+                <div>
                     {" "}
-                    <Swiper
-                        slidesPerView={"auto"}
-                        navigation={true}
-                        mousewheel={true}
-                        keyboard={true}
-                        modules={[Navigation, Keyboard]}
-                        className="mySwiper"
-                    >
-                        {credits}{" "}
-                    </Swiper>
-                </ul>
+                    <h6>{t("cast")}</h6>
+                    <ul>
+                        {" "}
+                        <Swiper
+                            slidesPerView={"auto"}
+                            navigation={true}
+                            mousewheel={true}
+                            keyboard={true}
+                            modules={[Navigation, Keyboard]}
+                            className="mySwiper"
+                        >
+                            {credits}{" "}
+                        </Swiper>
+                    </ul>
+                </div>
+                {data?.cast.length && data?.cast.length > 5 && (
+                    <button onClick={() => handlerPortalStatus(true)}>
+                        {t("seeAll")} {data?.cast.length}
+                    </button>
+                )}
+                {portalStatus && (
+                    <Portal
+                        component={
+                            <PortalWindow
+                                closeWindowFunc={handlerPortalStatus}
+                                content={
+                                    <ul className={s.allCredits}>
+                                        {allCredits}
+                                    </ul>
+                                }
+                            />
+                        }
+                    />
+                )}
             </div>
-            {data?.cast.length && data?.cast.length > 5 && (
-                <button onClick={() => handlerPortalStatus(true)}>
-                    {t("seeAll")} {data?.cast.length}
-                </button>
-            )}
-            {portalStatus && (
-                <Portal
-                    component={
-                        <PortalWindow
-                            closeWindowFunc={handlerPortalStatus}
-                            content={
-                                <ul className={s.allCredits}>{allCredits}</ul>
-                            }
-                        />
-                    }
-                />
-            )}
+            <Staff data={data?.crew} />
         </div>
     );
 };

@@ -7,12 +7,16 @@ import "swiper/css/pagination";
 import "./../../../../static/SCSS/swiper3.scss";
 import "swiper/css/navigation";
 import { PersonImgResponse } from "../../../../Types/GetImgTypes";
-import { ORIGIN_BACKGROUND_URL } from "../../../../static/constants/URL";
+import {
+    MEDIUM_BACKGROUND_URL,
+    ORIGIN_BACKGROUND_URL,
+} from "../../../../static/constants/URL";
 import { usePersonImgQuery } from "../../../../redux/RTQK/KinoList";
 import { selectorApiOptions } from "../../../../selectors/GlobalOptions";
 import { useAppSelector } from "../../../../static/hooks/hooks";
 import ZoomImg from "../../../UI/ZoomImg/ZoomImg";
 import ErrorPopUp from "../../../UI/ErrorPopUp/ErrorPopUp";
+import { Img } from "../../../UI/Img/ImgWrapper";
 type ImgListType = {
     id: number;
 };
@@ -24,13 +28,7 @@ const ImgList: FC<ImgListType> = ({ id }) => {
         return (
             <SwiperSlide key={id}>
                 <div className={s.slide}>
-                    <img
-                        src={ORIGIN_BACKGROUND_URL + el.file_path}
-                        alt="picture"
-                    />
-                    <div className={s.zoom}>
-                        <ZoomImg url={el.file_path} />
-                    </div>
+                    <Img imgUrl={MEDIUM_BACKGROUND_URL + el.file_path} />
                 </div>
             </SwiperSlide>
         );

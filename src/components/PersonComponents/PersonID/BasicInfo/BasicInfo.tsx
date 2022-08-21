@@ -1,6 +1,8 @@
+import { Skeleton } from "@mui/material";
 import React, { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import { Img } from "../../../UI/Img/ImgWrapper";
 import {
     getValidPersonBirthDay,
     getValidPersonDeathDay,
@@ -25,21 +27,21 @@ const BasicInfo: FC<BasicInfoType> = ({ data, filmData }) => {
     if (!data) {
         return null;
     }
-    console.log(data?.profile_path);
 
     return (
         <div className={s.basicWrapper}>
             <h1>{data?.name}</h1>
             <div className={s.mainInfo}>
                 <div className={s.imgWrapper}>
-                    <img
+                    {/* <img
                         src={
                             data?.profile_path
                                 ? SMALL_POSTER_URL + data?.profile_path
                                 : NO_AVA
                         }
-                    />
-                    <ZoomImg url={data?.profile_path} />
+                    /> */}
+
+                    <Img imgUrl={SMALL_POSTER_URL + data?.profile_path} />
                 </div>
                 <div className={s.infoSection}>
                     <div>

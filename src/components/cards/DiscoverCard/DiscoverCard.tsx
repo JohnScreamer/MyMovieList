@@ -28,7 +28,7 @@ const DiscoverCard: FC<DiscoverCardType> = ({ movie, tv, id, vote }) => {
                             className={s.rating}
                             style={{ color: ratingColor(movie.vote_average) }}
                         >
-                            {movie.vote_average}
+                            {String(movie.vote_average).slice(0, 3)}
                         </span>
                     )}
 

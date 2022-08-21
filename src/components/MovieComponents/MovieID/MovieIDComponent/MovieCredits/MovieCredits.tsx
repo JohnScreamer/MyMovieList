@@ -20,6 +20,7 @@ import { useOnClickOutside } from "../../../../../static/hooks/ClickOutside";
 import { Cast } from "../../../../../Types/PersonType";
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
+import Staff from "../../../../UI/COMMON/Staff/Staff";
 type MovieCreditsType = {
     id: string;
 };
@@ -44,7 +45,7 @@ const MovieCredits: FC<MovieCreditsType> = ({ id }) => {
     const credits = data?.cast
         .filter((el, id) => id < 10)
         .map((el) => (
-            <SwiperSlide key={el?.id}>
+            <SwiperSlide key={el.id}>
                 {" "}
                 <CastCard key={el.id} data={el} />{" "}
             </SwiperSlide>
@@ -59,40 +60,45 @@ const MovieCredits: FC<MovieCreditsType> = ({ id }) => {
     }
 
     return (
-        <div className={s.creditsWrapper}>
-            <div>
-                {" "}
-                <h4>{t("cast")}</h4>
-                <ul>
-                    <Swiper
-                        slidesPerView={"auto"}
-                        navigation={true}
-                        mousewheel={true}
-                        keyboard={true}
-                        modules={[Navigation, Keyboard]}
-                        className="mySwiper"
-                    >
-                        {credits}
-                    </Swiper>
-                </ul>
+        <div className={s.container}>
+            <div className={s.creditsWrapper}>
+                <div>
+                    {" "}
+                    <h4>{t("cast")}</h4>
+                    <ul>
+                        <Swiper
+                            slidesPerView={"auto"}
+                            navigation={true}
+                            mousewheel={true}
+                            keyboard={true}
+                            modules={[Navigation, Keyboard]}
+                            className="mySwiper"
+                        >
+                            {credits}
+                        </Swiper>
+                    </ul>
+                </div>
+                {data?.cast.length && data?.cast.length > 5 && (
+                    <button onClick={() => handlerPortalStatus(true)}>
+                        {t("seeAll")} {data?.cast.length}
+                    </button>
+                )}
+                {portalStatus && (
+                    <Portal
+                        component={
+                            <PortalWindow
+                                closeWindowFunc={handlerPortalStatus}
+                                content={
+                                    <ul className={s.allCredits}>
+                                        {allCredits}
+                                    </ul>
+                                }
+                            />
+                        }
+                    />
+                )}
             </div>
-            {data?.cast.length && data?.cast.length > 5 && (
-                <button onClick={() => handlerPortalStatus(true)}>
-                    {t("seeAll")} {data?.cast.length}
-                </button>
-            )}
-            {portalStatus && (
-                <Portal
-                    component={
-                        <PortalWindow
-                            closeWindowFunc={handlerPortalStatus}
-                            content={
-                                <ul className={s.allCredits}>{allCredits}</ul>
-                            }
-                        />
-                    }
-                />
-            )}
+            <Staff data={data.crew} />
         </div>
     );
 };

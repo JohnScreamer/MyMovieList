@@ -22,10 +22,13 @@
         font-size: 20px;
         @include adaptive-value("font-size", 20, 14);
         right: 25px;
-        padding: 20px;
         @include adaptive-value("padding", 20, 10);
         background: var(--color-tab-basic2);
         border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 55px;
         bottom: 5%;
         position: absolute;
     }
