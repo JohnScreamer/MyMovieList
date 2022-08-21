@@ -21,10 +21,7 @@ const Img: FC<ImgType> = ({ imgUrl }) => {
         //         setUrl(URL.createObjectURL(image));
         //     });
 
-        fetch(
-            "https://image.tmdb.org/t/p/w500/47X1h91UUfhMxO42KV9fKoGAVMC.jpg",
-            { method: "GET" }
-        )
+        fetch(imgUrl, { method: "GET" })
             .then((data) => data.blob())
             .then((data) => setUrl(URL.createObjectURL(data)));
     }, [imgUrl]);
