@@ -21,7 +21,7 @@ const Img: FC<ImgType> = ({ imgUrl }) => {
         //         setUrl(URL.createObjectURL(image));
         //     });
 
-        fetch(imgUrl, { method: "GET" })
+        fetch(imgUrl, { method: "GET", mode: "no-cors" })
             .then((data) => data.blob())
             .then((data) => setUrl(URL.createObjectURL(data)));
     }, [imgUrl]);
