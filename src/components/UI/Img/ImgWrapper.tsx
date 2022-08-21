@@ -14,7 +14,8 @@ const Img: FC<ImgType> = ({ imgUrl }) => {
         fetch(imgUrl, {
             mode: "cors",
             headers: {
-                "Access-Control-Allow-Origin": "http://localhost:3000",
+                "Access-Control-Allow-Origin":
+                    "https://my-movie-list-two.vercel.app",
             },
         })
             .then((response) => {
