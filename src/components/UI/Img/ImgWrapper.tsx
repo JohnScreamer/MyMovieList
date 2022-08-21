@@ -28,8 +28,8 @@ const Img: FC<ImgType> = ({ imgUrl }) => {
 
     return (
         <>
-            <img src={url} />
-            <ZoomImg url={url} />
+            <img src={imgUrl} />
+            <ZoomImg url={imgUrl} />
         </>
     );
 };
