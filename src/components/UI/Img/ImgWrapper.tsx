@@ -10,34 +10,32 @@ type ImgType = {
 };
 const Img: FC<ImgType> = ({ imgUrl }) => {
     const param = useAppSelector(selectorApiOptions);
-    const [url, setUrl] = useState("");
-    useEffect(() => {
-        // fetch(imgUrl)
-        //     .then((response) => {
-        //         console.log(response);
-        //         return response.blob();
-        //     })
-        //     .then((image) => {
-        //         setUrl(URL.createObjectURL(image));
-        //     });
+    const [url, setUrl] = useState<any>("");
+    // useEffect(() => {
+    // fetch(imgUrl)
+    //     .then((response) => {
+    //         console.log(response);
+    //         return response.blob();
+    //     })
+    //     .then((image) => {
+    //         setUrl(URL.createObjectURL(image));
+    //     });
 
-        fetch(imgUrl, { method: "GET", mode: "no-cors" })
-            .then((data) => data.blob())
-            .then((data) => setUrl(URL.createObjectURL(data)));
-    }, [imgUrl]);
+    //     fetch(imgUrl).then(data.)
+    // }, [imgUrl]);
 
-    if (!url) {
-        return (
-            <div>
-                <Spiner small />
-            </div>
-        );
-    }
+    // if (!url) {
+    //     return (
+    //         <div>
+    //             <Spiner small />
+    //         </div>
+    //     );
+    // }
 
     return (
         <>
-            <img src={url} />
-            <ZoomImg url={url} />
+            <img src={imgUrl} />
+            <ZoomImg url={imgUrl} />
         </>
     );
 };
