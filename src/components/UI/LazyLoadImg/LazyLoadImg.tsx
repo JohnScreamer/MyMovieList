@@ -20,7 +20,7 @@ const LazyLoadImg: FC<LazyLoadImgType> = ({ src }) => {
             <LazyLoadImage
                 // alt={image.alt}
                 height={"100%"}
-                src={src} // use normal <img> attributes as props
+                src={src}
                 width={"100%"}
                 afterLoad={handlerIsLoad}
                 beforeLoad={() => setLoadStart(true)}
