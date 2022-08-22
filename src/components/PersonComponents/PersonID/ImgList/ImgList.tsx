@@ -17,6 +17,7 @@ import { useAppSelector } from "../../../../static/hooks/hooks";
 import ZoomImg from "../../../UI/ZoomImg/ZoomImg";
 import ErrorPopUp from "../../../UI/ErrorPopUp/ErrorPopUp";
 import { Img } from "../../../UI/Img/ImgWrapper";
+import LazyLoadImg from "../../../UI/LazyLoadImg/LazyLoadImg";
 type ImgListType = {
     id: number;
 };
@@ -28,7 +29,7 @@ const ImgList: FC<ImgListType> = ({ id }) => {
         return (
             <SwiperSlide key={id}>
                 <div className={s.slide}>
-                    <Img imgUrl={MEDIUM_BACKGROUND_URL + el.file_path} />
+                    <LazyLoadImg src={MEDIUM_BACKGROUND_URL + el.file_path} />
                 </div>
             </SwiperSlide>
         );
