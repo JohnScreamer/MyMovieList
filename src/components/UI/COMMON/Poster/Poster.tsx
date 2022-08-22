@@ -10,6 +10,7 @@ import s from "./Poster.module.scss";
 import NO_PICTURE from "./../../../../static/img/noPoster.png";
 import { GetMovieType } from "../../../../Types/MovieType";
 import { Img } from "../../Img/ImgWrapper";
+import LazyLoadImg from "../../LazyLoadImg/LazyLoadImg";
 
 type PosterType = {
     movie?: GetMovieType;
@@ -44,6 +45,7 @@ const Poster: FC<PosterType> = ({ tv, movie }) => {
                     <Rating rating={tv.vote_average} count={tv.vote_count} />
                 </div>
                 <Img imgUrl={poster} />
+                <LazyLoadImg src={poster} />
             </div>
         );
     }
