@@ -17,11 +17,13 @@ const Staff: FC<StaffType> = ({ data }) => {
     if (!data) {
         return null;
     }
-    const credits = data.map((el, id) => (
-        <SwiperSlide key={id}>
-            <StaffCard data={el} />
-        </SwiperSlide>
-    ));
+    const credits = data
+        .filter((_, id) => id < 10)
+        .map((el, id) => (
+            <SwiperSlide key={id}>
+                <StaffCard data={el} />
+            </SwiperSlide>
+        ));
     return (
         <div className={s.staffWrapper}>
             <h3 className={s.title}>{t("staff")}</h3>

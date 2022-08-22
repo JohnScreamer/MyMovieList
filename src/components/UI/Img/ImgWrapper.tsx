@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect, FC } from "react";
 import { selectorApiOptions } from "../../../selectors/GlobalOptions";
 import { useAppSelector } from "../../../static/hooks/hooks";
+import LazyLoadImg from "../LazyLoadImg/LazyLoadImg";
 import Spiner from "../Spiner/Spiner";
 import ZoomImg from "../ZoomImg/ZoomImg";
 type ImgType = {
@@ -12,16 +13,14 @@ const Img: FC<ImgType> = ({ imgUrl }) => {
     const param = useAppSelector(selectorApiOptions);
     const [url, setUrl] = useState<any>("");
     // useEffect(() => {
-    // fetch(imgUrl)
-    //     .then((response) => {
-    //         console.log(response);
-    //         return response.blob();
-    //     })
-    //     .then((image) => {
-    //         setUrl(URL.createObjectURL(image));
-    //     });
+    //     fetch(imgUrl)
+    //         .then((response) => {
+    //             return response.blob();
+    //         })
+    //         .then((image) => {
+    //             setUrl(URL.createObjectURL(image));
+    //         });
 
-    //     fetch(imgUrl).then(data.)
     // }, [imgUrl]);
 
     // if (!url) {
@@ -34,7 +33,8 @@ const Img: FC<ImgType> = ({ imgUrl }) => {
 
     return (
         <>
-            <img src={imgUrl} />
+            {/* <img src={imgUrl} /> */}
+            <LazyLoadImg src={imgUrl} />
             <ZoomImg url={imgUrl} />
         </>
     );

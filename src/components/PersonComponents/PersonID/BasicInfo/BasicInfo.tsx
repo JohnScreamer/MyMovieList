@@ -16,6 +16,7 @@ import { Cast, PersonType } from "../../../../Types/PersonType";
 import ZoomImg from "../../../UI/ZoomImg/ZoomImg";
 import NO_AVA from "./../../../../static/img/noavatar1.png";
 import s from "./BasicInfo.module.scss";
+import LazyLoadImg from "../../../UI/LazyLoadImg/LazyLoadImg";
 type BasicInfoType = {
     data: PersonType | null;
     filmData: Array<Cast>;
@@ -41,7 +42,8 @@ const BasicInfo: FC<BasicInfoType> = ({ data, filmData }) => {
                         }
                     /> */}
 
-                    <Img imgUrl={SMALL_POSTER_URL + data?.profile_path} />
+                    {/* <Img imgUrl={SMALL_POSTER_URL + data?.profile_path} /> */}
+                    <LazyLoadImg src={SMALL_POSTER_URL + data?.profile_path} />
                 </div>
                 <div className={s.infoSection}>
                     <div>
