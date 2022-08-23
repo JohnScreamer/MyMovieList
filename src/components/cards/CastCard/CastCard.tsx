@@ -8,8 +8,9 @@ import s from "./CastCard.module.scss";
 
 type CastCardType = {
     data: Cast;
+    lazy?: boolean;
 };
-const CastCard: FC<CastCardType> = ({ data }) => {
+const CastCard: FC<CastCardType> = ({ data, lazy }) => {
     const poster = data.profile_path
         ? TINY_POSTER_URL + data.profile_path
         : NO_AVA;
@@ -17,8 +18,7 @@ const CastCard: FC<CastCardType> = ({ data }) => {
     return (
         <Link to={`/person/id/${data.id}`}>
             <li key={data.id} className={s.castCardWrapper}>
-                {/* <LazyLoadImg src={poster} /> */}
-                <img src={poster} />
+                {lazy ? <LazyLoadImg src={poster} /> : <img src={poster} />}
                 <div className={s.info}>
                     <h3>{data.name}</h3>
                     <b>{data.character}</b>

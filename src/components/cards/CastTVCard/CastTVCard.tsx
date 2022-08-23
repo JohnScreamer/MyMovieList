@@ -8,25 +8,29 @@ import s from "./CastTVCard.module.scss";
 
 type CastTVCardType = {
     data: Cast;
+    lazy?: boolean;
 };
-const CastTVCard: FC<CastTVCardType> = ({ data }) => {
+const CastTVCard: FC<CastTVCardType> = ({ data, lazy }) => {
     return (
         <Link to={`/person/id/${data.id}`}>
             <li key={data.id} className={s.CastTVCardWrapper}>
-                {/* <LazyLoadImg
-                    src={
-                        data?.profile_path
-                            ? TINY_POSTER_URL + data.profile_path
-                            : NO_AVA
-                    }
-                /> */}
-                <img
-                    src={
-                        data?.profile_path
-                            ? TINY_POSTER_URL + data.profile_path
-                            : NO_AVA
-                    }
-                />
+                {lazy ? (
+                    <LazyLoadImg
+                        src={
+                            data?.profile_path
+                                ? TINY_POSTER_URL + data.profile_path
+                                : NO_AVA
+                        }
+                    />
+                ) : (
+                    <img
+                        src={
+                            data?.profile_path
+                                ? TINY_POSTER_URL + data.profile_path
+                                : NO_AVA
+                        }
+                    />
+                )}
                 <div className={s.info}>
                     <h3>{data.name}</h3>
                     <b>{data.character}</b>

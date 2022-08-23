@@ -47,7 +47,7 @@ const TVCredits: FC<TVCreditsType> = ({ id }) => {
         .map((el) => (
             <SwiperSlide key={el?.id}>
                 {" "}
-                <CastTVCard key={el.id} data={el} />
+                <CastTVCard key={el.id} data={el} lazy />
             </SwiperSlide>
         ));
     const allCredits = data?.cast.map((el: any) => (

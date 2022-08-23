@@ -47,7 +47,7 @@ const MovieCredits: FC<MovieCreditsType> = ({ id }) => {
         .map((el) => (
             <SwiperSlide key={el.id}>
                 {" "}
-                <CastCard key={el.id} data={el} />{" "}
+                <CastCard key={el.id} data={el} lazy />{" "}
             </SwiperSlide>
         ));
 
