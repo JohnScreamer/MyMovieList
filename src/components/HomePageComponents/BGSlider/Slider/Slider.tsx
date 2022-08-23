@@ -60,16 +60,16 @@ const Slider: FC<SliderType> = ({ label, data, isLoading }) => {
                 {isLoading ? (
                     <Swiper
                         slidesPerView={"auto"}
-                        spaceBetween={50}
+                        spaceBetween={25}
                         className="mySwiper"
-                        style={{ padding: "0 40px" }}
+                        style={{ padding: "0 50px" }}
                     >
                         {skeleton}
                     </Swiper>
                 ) : (
                     <Swiper
                         slidesPerView={"auto"}
-                        spaceBetween={50}
+                        spaceBetween={25}
                         className="mySwiper"
                         style={{ padding: "0 50px" }}
                     >

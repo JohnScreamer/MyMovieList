@@ -8,7 +8,7 @@ type ZoomImgWrapperType = {
 const ZoomImgWrapper: FC<ZoomImgWrapperType> = ({ img }) => {
     return (
         <div className={s.wrapper}>
-            <LazyLoadImg src={img} height="auto" width="auto" />
+            <LazyLoadImg src={img} />
         </div>
     );
 };
