@@ -36,14 +36,12 @@ const Slider: FC<SliderType> = ({ label, data, isLoading }) => {
     const firstRender = useRef(false);
     useEffect(() => {
         if (firstRender.current) {
-            //@ts-ignore
             dispatch(setActiveSlide(activeSlide));
         }
         firstRender.current = true;
     }, [activeSlide]);
 
     const arrOption = data.map((el) => (
-        //@ts-ignore
         <SwiperSlide key={el?.id}>
             {({ isActive }) => {
                 if (isActive && screenWidth < 769) {

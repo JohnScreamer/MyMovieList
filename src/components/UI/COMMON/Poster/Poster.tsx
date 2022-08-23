@@ -30,7 +30,7 @@ const Poster: FC<PosterType> = ({ tv, movie }) => {
                         count={movie.vote_count}
                     />
                 </div>
-                <Img imgUrl={poster} />
+                <LazyLoadImg src={poster} zoom />
             </div>
         );
     }
@@ -44,8 +44,7 @@ const Poster: FC<PosterType> = ({ tv, movie }) => {
                 <div className={s.rating}>
                     <Rating rating={tv.vote_average} count={tv.vote_count} />
                 </div>
-                <Img imgUrl={poster} />
-                <LazyLoadImg src={poster} />
+                <LazyLoadImg src={poster} zoom />
             </div>
         );
     }

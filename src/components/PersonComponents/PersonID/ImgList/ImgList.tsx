@@ -29,7 +29,10 @@ const ImgList: FC<ImgListType> = ({ id }) => {
         return (
             <SwiperSlide key={id}>
                 <div className={s.slide}>
-                    <LazyLoadImg src={MEDIUM_BACKGROUND_URL + el.file_path} />
+                    <LazyLoadImg
+                        src={MEDIUM_BACKGROUND_URL + el.file_path}
+                        zoom
+                    />
                 </div>
             </SwiperSlide>
         );

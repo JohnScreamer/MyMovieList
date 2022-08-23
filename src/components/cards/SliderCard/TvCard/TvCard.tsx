@@ -5,6 +5,7 @@ import { SMALL_POSTER_URL } from "../../../../static/constants/URL";
 import { useAppDispatch } from "../../../../static/hooks/hooks";
 import { CardWrapper } from "../../../../styledComponents/CardWrapper";
 import { TvType } from "../../../../Types/ApiTvTypes";
+import LazyLoadImg from "../../../UI/LazyLoadImg/LazyLoadImg";
 import s from "./TvCard.module.scss";
 type TvCardType = {
     tv: TvType;
@@ -18,13 +19,12 @@ const TvCard: FC<TvCardType> = ({ tv }) => {
     };
     return (
         <Link to={`/tv/id/${tv.id}`}>
-            <CardWrapper
-                className={s.cardWrapper}
-                onMouseOver={handlerSetSlide}
-                bg={bg}
-            >
-                <h3>{tv.name}</h3>
-            </CardWrapper>
+            <div className={s.cardWrapper} onMouseOver={handlerSetSlide}>
+                <div className={s.decor}>
+                    <h3>{tv.name}</h3>
+                </div>
+                <LazyLoadImg src={bg} />
+            </div>
         </Link>
     );
 };

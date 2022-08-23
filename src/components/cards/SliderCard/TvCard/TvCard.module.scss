@@ -10,14 +10,48 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    padding: 10px;
+    position: relative;
+    transition: all 0.5s ease 0s;
+    animation: bgAnimation 8s ease 0s 1 normal forwards;
 
     h3 {
+        transition: all 0.5s ease 0s;
+        position: relative;
+
         display: none;
+        margin-bottom: 15px;
+        animation: myAnim 1s ease 0s 1 normal forwards;
+    }
+    .decor {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        transition: all 0.5s ease 0s;
+        padding: 10px;
+        background: linear-gradient(0deg, var(--color-background) 5%, rgba(253, 187, 45, 0) 51%);
     }
     &:hover {
+        transition: all 0.5s ease 0s;
         h3 {
             display: block;
         }
+        .decor {
+            transition: all 0.5s ease 0s;
+            background: linear-gradient(0deg, var(--color-background) 15%, rgba(253, 187, 45, 0) 91%);
+        }
+    }
+}
+@keyframes myAnim {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

@@ -1,10 +1,10 @@
 .wrapper {
     display: flex;
-    max-height: 90%;
+
     justify-content: center;
 
+    position: relative;
+    align-items: center;
     img {
-        max-width: 520px;
-        width: 100%;
     }
 }

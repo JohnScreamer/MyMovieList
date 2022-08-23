@@ -6,6 +6,7 @@ import { CardWrapper } from "../../../../styledComponents/CardWrapper";
 import { Link } from "react-router-dom";
 import { useAppDispatch } from "../../../../static/hooks/hooks";
 import { setActiveSlide } from "../../../../redux/slice/GlobalOptionsSlice";
+import LazyLoadImg from "../../../UI/LazyLoadImg/LazyLoadImg";
 type MovieCardType = {
     movie: MovieType;
 };
@@ -20,13 +21,12 @@ const MovieCard: FC<MovieCardType> = ({ movie }) => {
 
     return (
         <Link to={`/movie/id/${movie.id}`}>
-            <CardWrapper
-                className={s.cardWrapper}
-                onMouseOver={handlerSetSlide}
-                bg={bg}
-            >
-                <h3> {movie.title}</h3>
-            </CardWrapper>
+            <div className={s.cardWrapper} onMouseOver={handlerSetSlide}>
+                <div className={s.decor}>
+                    <h3> {movie.title}</h3>
+                </div>
+                <LazyLoadImg src={bg} />
+            </div>
         </Link>
     );
 };

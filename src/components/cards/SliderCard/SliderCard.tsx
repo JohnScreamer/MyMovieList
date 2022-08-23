@@ -19,9 +19,9 @@ const SliderCard: FC<SliderCardType> = ({ info }) => {
         case "movie":
             slide = <MovieCard movie={info as MovieType} />;
             break;
-        case "person":
-            slide = <PersonCard person={info as PersonTrendingType} />;
-            break;
+        // case "person":
+        //     slide = <PersonCard person={info as PersonTrendingType} />;
+        //     break;
 
         default:
             break;

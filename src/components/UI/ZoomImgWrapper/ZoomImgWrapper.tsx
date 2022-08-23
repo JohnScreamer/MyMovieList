@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { SMALL_POSTER_URL } from "../../../static/constants/URL";
+import LazyLoadImg from "../LazyLoadImg/LazyLoadImg";
 import s from "./ZoomImgWrapper.module.scss";
 type ZoomImgWrapperType = {
     img: string;
@@ -7,7 +8,7 @@ type ZoomImgWrapperType = {
 const ZoomImgWrapper: FC<ZoomImgWrapperType> = ({ img }) => {
     return (
         <div className={s.wrapper}>
-            <img src={img} />
+            <LazyLoadImg src={img} height="auto" width="auto" />
         </div>
     );
 };

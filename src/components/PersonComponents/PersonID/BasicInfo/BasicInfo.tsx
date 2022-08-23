@@ -43,7 +43,10 @@ const BasicInfo: FC<BasicInfoType> = ({ data, filmData }) => {
                     /> */}
 
                     {/* <Img imgUrl={SMALL_POSTER_URL + data?.profile_path} /> */}
-                    <LazyLoadImg src={SMALL_POSTER_URL + data?.profile_path} />
+                    <LazyLoadImg
+                        src={SMALL_POSTER_URL + data?.profile_path}
+                        zoom
+                    />
                 </div>
                 <div className={s.infoSection}>
                     <div>
