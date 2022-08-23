@@ -13,7 +13,14 @@ const CastTVCard: FC<CastTVCardType> = ({ data }) => {
     return (
         <Link to={`/person/id/${data.id}`}>
             <li key={data.id} className={s.CastTVCardWrapper}>
-                <LazyLoadImg
+                {/* <LazyLoadImg
+                    src={
+                        data?.profile_path
+                            ? TINY_POSTER_URL + data.profile_path
+                            : NO_AVA
+                    }
+                /> */}
+                <img
                     src={
                         data?.profile_path
                             ? TINY_POSTER_URL + data.profile_path
