@@ -9,6 +9,7 @@ import anime from "./../../static/img/BG/bestAnime.webp";
 import topRated from "./../../static/img/BG/toTVRATING.jpg";
 import tvAuthor from "./../../static/img/BG/bestserialaurthor.jpg";
 import popular from "./../../static/img/BG/popularTV.jpg";
+import LazyLoadImg from "../UI/LazyLoadImg/LazyLoadImg";
 
 export const TV = () => {
     const dispatch = useAppDispatch();
@@ -25,7 +26,7 @@ export const TV = () => {
                 to={"/tv/top_rated/"}
                 className={classNames(s.medium, s.block)}
             >
-                <img src={topRated} />
+                <LazyLoadImg src={topRated} />
                 <h2>{t("topRatedTV")}</h2>
             </Link>
 
@@ -34,7 +35,7 @@ export const TV = () => {
                     to={"/tv/popular/"}
                     className={classNames(s.small, s.popular, s.block)}
                 >
-                    <img src={popular} />
+                    <LazyLoadImg src={popular} />
                     <h2>{t("popularShowNow")}</h2>
                 </Link>
 
@@ -42,14 +43,14 @@ export const TV = () => {
                     to={"/tv/anime_list/"}
                     className={classNames(s.small, s.upcoming, s.block)}
                 >
-                    <img src={anime} />
+                    <LazyLoadImg src={anime} />
                     <h2>{t("topAnimeAuthor")}</h2>
                 </Link>
                 <Link
                     to={"/tv/top_author_list/"}
                     className={classNames(s.small, s.author, s.block)}
                 >
-                    <img src={tvAuthor} />
+                    <LazyLoadImg src={tvAuthor} />
                     <h2>{t("topTVshowFromAuthor")}</h2>
                 </Link>
             </div>

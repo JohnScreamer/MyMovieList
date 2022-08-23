@@ -11,6 +11,7 @@ import { useAppDispatch } from "../../static/hooks/hooks";
 import { useEffect } from "react";
 import { setIsSlideActive } from "../../redux/slice/GlobalOptionsSlice";
 import { useTranslation } from "react-i18next";
+import LazyLoadImg from "../UI/LazyLoadImg/LazyLoadImg";
 const Movie = () => {
     const dispatch = useAppDispatch();
     useEffect(() => {
@@ -26,7 +27,7 @@ const Movie = () => {
                 to={"/movie/topRated/"}
                 className={classNames(s.medium, s.block)}
             >
-                <img src={topRated} />
+                <LazyLoadImg src={topRated} />
                 <h2>{t("topRated")}</h2>
             </Link>
 
@@ -35,28 +36,28 @@ const Movie = () => {
                     to={"/movie/popular/"}
                     className={classNames(s.small, s.popular, s.block)}
                 >
-                    <img src={trending} />
+                    <LazyLoadImg src={trending} />
                     <h2>{t("popularNow")}</h2>
                 </Link>
                 <Link
                     to={"/movie/mostVoted/"}
                     className={classNames(s.small, s.vote, s.block)}
                 >
-                    <img src={vote} />
+                    <LazyLoadImg src={vote} />
                     <h2>{t("mostVotedMovie")}</h2>
                 </Link>
                 <Link
                     to={"/movie/worstMovies/"}
                     className={classNames(s.small, s.upcoming, s.block)}
                 >
-                    <img src={upcoming} />
+                    <LazyLoadImg src={upcoming} />
                     <h2>{t("worstMovie")}</h2>
                 </Link>
                 <Link
                     to={"/movie/author_movie_top/"}
                     className={classNames(s.small, s.author, s.block)}
                 >
-                    <img src={author} />
+                    <LazyLoadImg src={author} />
                     <h2>{t("topMovieFromAuthor")}</h2>
                 </Link>
             </div>
