@@ -13,10 +13,12 @@ const CastCard: FC<CastCardType> = ({ data }) => {
     const poster = data.profile_path
         ? TINY_POSTER_URL + data.profile_path
         : NO_AVA;
+
     return (
         <Link to={`/person/id/${data.id}`}>
             <li key={data.id} className={s.castCardWrapper}>
-                <LazyLoadImg src={poster} />
+                {/* <LazyLoadImg src={poster} /> */}
+                <img src={poster} />
                 <div className={s.info}>
                     <h3>{data.name}</h3>
                     <b>{data.character}</b>
