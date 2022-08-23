@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import { TINY_POSTER_URL } from "../../../static/constants/URL";
 import { Cast, TVCredits } from "../../../Types/TVType";
+import LazyLoadImg from "../../UI/LazyLoadImg/LazyLoadImg";
 import NO_AVA from "./../../../static/img/noavatar1.png";
 import s from "./CastTVCard.module.scss";
 
@@ -12,7 +13,7 @@ const CastTVCard: FC<CastTVCardType> = ({ data }) => {
     return (
         <Link to={`/person/id/${data.id}`}>
             <li key={data.id} className={s.CastTVCardWrapper}>
-                <img
+                <LazyLoadImg
                     src={
                         data?.profile_path
                             ? TINY_POSTER_URL + data.profile_path

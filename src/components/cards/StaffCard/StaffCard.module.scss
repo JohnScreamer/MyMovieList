@@ -29,6 +29,10 @@
 .avatar {
     overflow: hidden;
     margin-bottom: 5px;
+    overflow: hidden;
+    border-radius: 50px;
+    position: relative;
+    z-index: 500;
     img {
         width: 75px;
         height: 75px;
