@@ -43,7 +43,10 @@ const LazyLoadImg: FC<LazyLoadImgType> = ({ src, zoom, width, height }) => {
             />
 
             {loadStart && (
-                <div className={s.placeholder}>{/* <Spiner /> */}</div>
+                <div className={s.placeholder}>
+                    {/* <Skeleton animation="wave" width={"100%"} height={"100%"} /> */}
+                    {/* <Spiner /> */}
+                </div>
             )}
             {zoom && isLoading && <ZoomImg url={src} />}
         </>
