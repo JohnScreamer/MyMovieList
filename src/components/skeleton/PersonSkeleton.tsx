@@ -19,7 +19,7 @@ const PersonSkeleton = () => {
                 variant="rectangular"
                 style={{
                     width: "100%",
-                    height: "650px",
+                    height: "450px",
                     marginBottom: "20px",
                     background: "var(--color-skeleton)",
                 }}
