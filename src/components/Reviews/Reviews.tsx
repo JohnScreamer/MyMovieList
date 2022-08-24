@@ -1,3 +1,4 @@
+import { Skeleton } from "@mui/material";
 import Pagination from "@mui/material/Pagination/Pagination";
 import { FC, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -33,6 +34,11 @@ const Reviews: FC<ReviewsType> = ({ reviewsType, id }) => {
     const reviewsList = data?.results.map((el, id) => (
         <ReviewCard data={el} key={id} />
     ));
+    const skeletonArr = Array(10)
+        .fill(null)
+        .map((el, id) => (
+            <Skeleton key={id} animation="wave" width={"100%"} height="300px" />
+        ));
     const { t } = useTranslation();
 
     if (!data?.total_results) {
@@ -42,7 +48,7 @@ const Reviews: FC<ReviewsType> = ({ reviewsType, id }) => {
     return (
         <div className={s.reviews}>
             <h2 className={s.title}>{t("reviews")}</h2>
-            <ul>{reviewsList}</ul>
+            <ul>{isLoading ? skeletonArr : reviewsList}</ul>
             <div className={s.pagination}>
                 {data?.total_pages > 1 && (
                     <Pagination

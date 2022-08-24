@@ -1,6 +1,7 @@
 @import "./../../../static/SCSS/Mixin.scss";
 .infoBlock {
     display: flex;
+    background: var(--color-tab-basic);
 }
 .tvWrapper {
     max-width: 950px;

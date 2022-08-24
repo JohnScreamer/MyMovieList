@@ -21,6 +21,8 @@ import { Cast } from "../../../../../Types/PersonType";
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Staff from "../../../../UI/COMMON/Staff/Staff";
+import { Skeleton } from "@mui/material";
+import ErrorPopUp from "../../../../UI/ErrorPopUp/ErrorPopUp";
 type MovieCreditsType = {
     id: string;
 };
@@ -37,7 +39,7 @@ const MovieCredits: FC<MovieCreditsType> = ({ id }) => {
     useEffect(() => {
         setPortalStatus(status || false);
     }, [status]);
-    const { data } = useMovieCreditsQuery({
+    const { data, isLoading, isError } = useMovieCreditsQuery({
         param: { ...param, language },
         url: id,
     });
@@ -54,6 +56,24 @@ const MovieCredits: FC<MovieCreditsType> = ({ id }) => {
     const allCredits = data?.cast.map((el: any) => (
         <CastCard key={el.id} data={el} />
     ));
+    if (isLoading) {
+        return (
+            <>
+                <Skeleton
+                    animation="wave"
+                    style={{ marginBottom: "15px" }}
+                    height={38}
+                    width="170px"
+                />
+                <Skeleton
+                    variant="rectangular"
+                    animation="wave"
+                    width={"100%"}
+                    height={318}
+                />
+            </>
+        );
+    }
 
     if (!data?.cast.length) {
         return null;
@@ -62,6 +82,12 @@ const MovieCredits: FC<MovieCreditsType> = ({ id }) => {
     return (
         <div className={s.container}>
             <div className={s.creditsWrapper}>
+                {isError && (
+                    <ErrorPopUp
+                        isError
+                        text={"Error, cant get  movie  credits data."}
+                    />
+                )}
                 <div>
                     {" "}
                     <h4>{t("cast")}</h4>

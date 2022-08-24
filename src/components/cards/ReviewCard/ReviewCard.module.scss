@@ -15,6 +15,11 @@
             height: 50px;
             border-radius: 50px;
             overflow: hidden;
+            position: relative;
+            z-index: 2;
+            div {
+                background: salmon;
+            }
 
             img {
                 width: 100%;

@@ -17,6 +17,8 @@ import "swiper/css/pagination";
 import "./../../../../../static/SCSS/swiper2.scss";
 import "swiper/css/navigation";
 import { useTranslation } from "react-i18next";
+import { Skeleton } from "@mui/material";
+import ErrorPopUp from "../../../../UI/ErrorPopUp/ErrorPopUp";
 type SimilarType = {
     id: number;
 };
@@ -24,7 +26,7 @@ type SimilarType = {
 const Similar: FC<SimilarType> = ({ id }) => {
     const language = useAppSelector(selectApiLanguage);
     const param = useAppSelector(selectorApiOptions);
-    const { data } = useMovieSimilarQuery({
+    const { data, isLoading, isError } = useMovieSimilarQuery({
         param: { ...param, language },
         url: id,
     });
@@ -36,6 +38,26 @@ const Similar: FC<SimilarType> = ({ id }) => {
             </SwiperSlide>
         ));
     const { t } = useTranslation();
+
+    if (isLoading) {
+        return (
+            <>
+                <Skeleton
+                    animation="wave"
+                    style={{ marginBottom: "15px" }}
+                    height={38}
+                    width="170px"
+                />
+                <Skeleton
+                    variant="rectangular"
+                    animation="wave"
+                    width={"100%"}
+                    height={318}
+                />
+            </>
+        );
+    }
+
     return (
         <div className={s.similarWrapper}>
             <h5>{t("similarMovie")}</h5>
@@ -51,6 +73,12 @@ const Similar: FC<SimilarType> = ({ id }) => {
                     {list}{" "}
                 </Swiper>
             </ul>
+            {isError && (
+                <ErrorPopUp
+                    isError
+                    text={"Error, cant get similar movie data."}
+                />
+            )}
         </div>
     );
 };

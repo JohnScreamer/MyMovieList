@@ -6,11 +6,12 @@
     height: 100%;
 
     &:hover {
-        background: var(--color-blur-color);
+        .textSection {
+            background: var(--color-tab-basic2);
+        }
     }
 
     img {
-        margin-bottom: 10px;
         width: 175px;
         height: 260px;
     }
@@ -19,6 +20,11 @@
         display: flex;
         flex-direction: column;
         padding: 5px;
+        padding-top: 15px;
+        background: var(--color-tab-basic);
+        position: relative;
+        z-index: 400;
+        height: 100%;
         .title {
             font-size: 16px;
             @include adaptive-value("font-size", 16, 12);

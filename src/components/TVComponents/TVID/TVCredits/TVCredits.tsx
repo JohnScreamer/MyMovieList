@@ -22,6 +22,7 @@ import ErrorPopUp from "../../../UI/ErrorPopUp/ErrorPopUp";
 import qs from "qs";
 import { useLocation, useNavigate } from "react-router-dom";
 import Staff from "../../../UI/COMMON/Staff/Staff";
+import { Skeleton } from "@mui/material";
 type TVCreditsType = {
     id: string;
 };
@@ -38,7 +39,7 @@ const TVCredits: FC<TVCreditsType> = ({ id }) => {
     useEffect(() => {
         setPortalStatus(status || false);
     }, [status]);
-    const { data, isError } = useTvCreditsQuery({
+    const { data, isError, isLoading } = useTvCreditsQuery({
         param: { ...param, language },
         url: id,
     });
@@ -54,6 +55,25 @@ const TVCredits: FC<TVCreditsType> = ({ id }) => {
         <CastTVCard key={el.id} data={el} />
     ));
     const { t } = useTranslation();
+
+    if (isLoading) {
+        return (
+            <>
+                <Skeleton
+                    animation="wave"
+                    style={{ marginBottom: "15px" }}
+                    height={38}
+                    width="170px"
+                />
+                <Skeleton
+                    variant="rectangular"
+                    animation="wave"
+                    width={"100%"}
+                    height={318}
+                />
+            </>
+        );
+    }
 
     if (!data?.cast.length) {
         return null;

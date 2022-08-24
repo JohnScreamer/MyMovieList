@@ -24,6 +24,7 @@ const Staff: FC<StaffType> = ({ data }) => {
                 <StaffCard data={el} />
             </SwiperSlide>
         ));
+
     return (
         <div className={s.staffWrapper}>
             <h3 className={s.title}>{t("staff")}</h3>

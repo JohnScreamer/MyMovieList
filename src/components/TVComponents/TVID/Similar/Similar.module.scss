@@ -10,7 +10,7 @@
         @include adaptive-value("font-size", 20, 14);
     }
     ul {
-        background: var(--color-tab-basic);
+        background: var(--color-blur-color);
         display: flex;
         a {
             display: block;
