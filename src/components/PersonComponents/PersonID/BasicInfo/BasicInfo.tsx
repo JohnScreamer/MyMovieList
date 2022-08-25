@@ -1,19 +1,12 @@
-import { Skeleton } from "@mui/material";
-import React, { FC, useState } from "react";
+import { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { Img } from "../../../UI/Img/ImgWrapper";
 import {
     getValidPersonBirthDay,
     getValidPersonDeathDay,
 } from "../../../../features/isRelease";
-import {
-    validPersonDateBirthday,
-    validPersonDateDeathday,
-} from "../../../../features/ratingFilter";
 import { SMALL_POSTER_URL } from "../../../../static/constants/URL";
 import { Cast, PersonType } from "../../../../Types/PersonType";
-import ZoomImg from "../../../UI/ZoomImg/ZoomImg";
 import NO_AVA from "./../../../../static/img/noavatar1.png";
 import s from "./BasicInfo.module.scss";
 import LazyLoadImg from "../../../UI/LazyLoadImg/LazyLoadImg";
@@ -34,18 +27,13 @@ const BasicInfo: FC<BasicInfoType> = ({ data, filmData }) => {
             <h1>{data?.name}</h1>
             <div className={s.mainInfo}>
                 <div className={s.imgWrapper}>
-                    {/* <img
+                    <LazyLoadImg
                         src={
                             data?.profile_path
                                 ? SMALL_POSTER_URL + data?.profile_path
                                 : NO_AVA
                         }
-                    /> */}
-
-                    {/* <Img imgUrl={SMALL_POSTER_URL + data?.profile_path} /> */}
-                    <LazyLoadImg
-                        src={SMALL_POSTER_URL + data?.profile_path}
-                        zoom
+                        zoom={data?.profile_path ? true : false}
                     />
                 </div>
                 <div className={s.infoSection}>
@@ -63,7 +51,7 @@ const BasicInfo: FC<BasicInfoType> = ({ data, filmData }) => {
                     <div>
                         <b>{t("gender")}</b>
                         <span>
-                            {data?.gender == 2 ? t("male") : t("female")}
+                            {data?.gender === 2 ? t("male") : t("female")}
                         </span>
                     </div>
                     <div>

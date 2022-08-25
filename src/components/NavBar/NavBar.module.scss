@@ -81,7 +81,10 @@
     position: fixed;
     z-index: 1550;
     padding: 20px;
-    // background: var(--color-background);
+
+    background: linear-gradient(160deg, var(--color-background) 35%, rgba(255, 255, 255, 0) 90%);
+    // linear-gradient(180deg, var(--color-background) 0%, rgba(255, 255, 255, 0) 50%);
+
     @include adaptive-value("padding", 20, 15);
     opacity: 0;
     &:hover {

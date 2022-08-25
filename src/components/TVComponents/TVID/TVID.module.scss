@@ -7,6 +7,7 @@
     max-width: 950px;
     width: 100%;
     padding: 0 40px;
+    padding-bottom: 100px;
     @include adaptive-value("padding-left", 40, 15);
     @include adaptive-value("padding-right", 40, 15);
 
@@ -26,9 +27,6 @@
     .infoBlock {
         display: block;
         flex-direction: column;
-    }
-    .tvWrapper {
-        padding-bottom: 100px;
     }
 }
 .loadingEnd {

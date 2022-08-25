@@ -9,15 +9,13 @@
     padding: 0 40px;
     @include adaptive-value("padding", 40, 15);
     margin: 0 auto;
+    padding-bottom: 50px;
 }
 
 @media (max-width: 768px) {
     .infoBlock {
         display: flex;
         flex-direction: column;
-    }
-    .movieWrapper {
-        padding-bottom: 50px;
     }
 }
 .loadingEnd {
