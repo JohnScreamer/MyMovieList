@@ -1,10 +1,8 @@
 import React, { FC } from "react";
 import { MovieType } from "../../../Types/ApiMoviTypes";
-import { PersonTrendingType } from "../../../Types/ApiPersonType";
 import { TvType } from "../../../Types/ApiTvTypes";
 import MovieSlide from "./MovieSlide/MovieSlide";
 import s from "./PreviewSlide.module.scss";
-
 import TVSlide from "./TVSlide/TVSlide";
 import {
     selectActiveSlide,

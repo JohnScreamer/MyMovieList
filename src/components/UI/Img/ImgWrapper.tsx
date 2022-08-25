@@ -10,30 +10,8 @@ type ImgType = {
     imgUrl: string;
 };
 const Img: FC<ImgType> = ({ imgUrl }) => {
-    const param = useAppSelector(selectorApiOptions);
-    const [url, setUrl] = useState<any>("");
-    // useEffect(() => {
-    //     fetch(imgUrl)
-    //         .then((response) => {
-    //             return response.blob();
-    //         })
-    //         .then((image) => {
-    //             setUrl(URL.createObjectURL(image));
-    //         });
-
-    // }, [imgUrl]);
-
-    // if (!url) {
-    //     return (
-    //         <div>
-    //             <Spiner small />
-    //         </div>
-    //     );
-    // }
-
     return (
         <>
-            {/* <img src={imgUrl} /> */}
             <LazyLoadImg src={imgUrl} />
             <ZoomImg url={imgUrl} />
         </>

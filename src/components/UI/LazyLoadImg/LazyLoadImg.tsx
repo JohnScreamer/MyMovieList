@@ -5,6 +5,7 @@ import s from "./LazyLoadImg.module.scss";
 import spin from "./../../../static/img/gif/Spin-0.9s-182px.gif";
 import { Skeleton } from "@mui/material";
 import Spiner from "../Spiner/Spiner";
+import broken from "./../../../static/img/broken-1.webp";
 type LazyLoadImgType = {
     src: string;
     zoom?: boolean;
@@ -12,8 +13,9 @@ type LazyLoadImgType = {
     height?: string;
 };
 const LazyLoadImg: FC<LazyLoadImgType> = ({ src, zoom, width, height }) => {
-    const [isLoading, setLoadingStatus] = useState(false);
-    const [loadStart, setLoadStart] = useState(true);
+    const [isLoading, setLoadingStatus] = useState<boolean>(false);
+    const [loadStart, setLoadStart] = useState<boolean>(true);
+    const [isError, setError] = useState<boolean>(false);
     useEffect(() => {
         setLoadingStatus(false);
         setLoadStart(true);
@@ -23,23 +25,27 @@ const LazyLoadImg: FC<LazyLoadImgType> = ({ src, zoom, width, height }) => {
         setLoadStart(false);
         console.log(isLoading);
     };
+    const handlerError = () => {
+        setError(true);
+    };
+    if (isError)
+        return (
+            <img
+                src={broken}
+                width={width ? width : "100%"}
+                height={height ? height : "100%"}
+            />
+        );
 
     return (
         <>
-            {/* <LazyLoadImage
-                // alt={image.alt}
-                
-                src={src}
-               
-                afterLoad={handlerIsLoad}
-                beforeLoad={handlerBeforeLoad}
-            /> */}
             <img
                 style={{ opacity: isLoading ? "100%" : "0%" }}
                 src={src}
                 width={width ? width : "100%"}
                 height={height ? height : "100%"}
                 onLoad={handlerLoad}
+                onError={handlerError}
             />
 
             {loadStart && (
