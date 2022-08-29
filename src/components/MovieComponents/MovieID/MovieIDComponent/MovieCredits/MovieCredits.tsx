@@ -16,8 +16,7 @@ import "./../../../../../static/SCSS/swiper2.scss";
 import "swiper/css/navigation";
 import Portal from "../../../../portal/Portal";
 import PortalWindow from "../../../../UI/PortalWindow/PortalWindow";
-import { useOnClickOutside } from "../../../../../static/hooks/ClickOutside";
-import { Cast } from "../../../../../Types/PersonType";
+
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Staff from "../../../../UI/COMMON/Staff/Staff";

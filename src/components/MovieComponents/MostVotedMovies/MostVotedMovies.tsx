@@ -24,7 +24,7 @@ const MostVotedMovies = () => {
     // });
 
     const [data, setData] = useState<DiscoveryMovieResponse | null>(null);
-    const [isError, setError] = useState(false);
+    const [isError, setError] = useState<boolean>(false);
     useEffect(() => {
         (async function () {
             const [response, error] = await DiscoverMovieRequest("", {

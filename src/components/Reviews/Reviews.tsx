@@ -18,7 +18,7 @@ const Reviews: FC<ReviewsType> = ({ reviewsType, id }) => {
     const apiParam = useAppSelector(selectorApiOptions);
     const language = useAppSelector(selectApiLanguage);
     const [getReview, { data, isLoading }] = useLazyReviewsQuery();
-    const [currentPage, setPage] = useState(1);
+    const [currentPage, setPage] = useState<number>(1);
 
     useEffect(() => {
         getReview({

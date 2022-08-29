@@ -1,18 +1,14 @@
-import React, { useRef, useState } from "react";
+import { useRef } from "react";
 import { NavLink } from "react-router-dom";
 import s from "./NavBarMobile.module.scss";
-import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ThemeToggle from "./themeToggle/ThemeToggle";
-import Home from "./../../static/img/svg/home.svg";
 import LanguageToggle from "./languageToggle/LanguageToggle";
-import MenuIcon from "@mui/icons-material/Menu";
 import classNames from "classnames";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useAppDispatch, useAppSelector } from "../../static/hooks/hooks";
 import { setBurgerStatus } from "../../redux/slice/GlobalOptionsSlice";
 
 import { selectBurgerStatus } from "../../selectors/GlobalOptions";
-import { useOnClickOutside } from "../../static/hooks/ClickOutside";
 import { useTranslation } from "react-i18next";
 const NavBar = () => {
     const dispatch = useAppDispatch();
@@ -81,7 +77,9 @@ const NavBar = () => {
                                 d="M8.72974 16.9595C4.18458 16.9595 0.500008 13.2749 0.500008 8.72973C0.500008 4.18458 4.18458 0.5 8.72974 0.5C13.2749 0.5 16.9595 4.18458 16.9595 8.72973C16.9595 10.6957 16.2701 12.5006 15.12 13.916L21.2506 20.0467C21.5831 20.3791 21.5831 20.9182 21.2506 21.2506C20.9182 21.5831 20.3791 21.5831 20.0467 21.2506L13.916 15.12C12.5006 16.2701 10.6957 16.9595 8.72974 16.9595ZM8.72973 15.2568C12.3345 15.2568 15.2568 12.3345 15.2568 8.72973C15.2568 5.12495 12.3345 2.2027 8.72973 2.2027C5.12496 2.2027 2.20271 5.12495 2.20271 8.72973C2.20271 12.3345 5.12496 15.2568 8.72973 15.2568Z"
                             />
                         </svg>
-                        <div className={classNames(s.text,s.search)}>{t("search")}</div>
+                        <div className={classNames(s.text, s.search)}>
+                            {t("search")}
+                        </div>
                     </NavLink>
                 </div>
                 <div className={s.iconWrap}>

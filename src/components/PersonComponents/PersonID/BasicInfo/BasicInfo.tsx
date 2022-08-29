@@ -16,7 +16,7 @@ type BasicInfoType = {
 };
 
 const BasicInfo: FC<BasicInfoType> = ({ data, filmData }) => {
-    const [showText, setTextStatus] = useState(false);
+    const [showText, setTextStatus] = useState<boolean>(false);
     const { t } = useTranslation();
     if (!data) {
         return null;

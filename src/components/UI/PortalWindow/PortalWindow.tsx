@@ -5,10 +5,9 @@ import { useOnClickOutside } from "../../../static/hooks/ClickOutside";
 type PortalWindowType = {
     content: React.ReactNode;
     closeWindowFunc: (data: boolean) => void;
-    
 };
 const PortalWindow: FC<PortalWindowType> = ({ content, closeWindowFunc }) => {
-    const containerRef = useRef(null);
+    const containerRef = useRef<HTMLDivElement | null>(null);
     const clickOutside = useOnClickOutside(containerRef, closeWindowFunc);
     return (
         <div className={s.wrapper}>

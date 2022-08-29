@@ -38,12 +38,12 @@ const SearchBlock: FC<SearchBlockType> = ({
     setLoadingStatus,
 }) => {
     const param = useAppSelector(selectorApiOptions);
-    const firstRender = useRef(false);
+    const firstRender = useRef<boolean>(false);
     const language = useAppSelector(selectApiLanguage);
     const [mediaType, setMediaType] = useState<MediaTypes>(
         (sessionStorage.getItem("MediaType") as MediaTypes) || "movie"
     );
-    const [searchValue, setSearchValue] = useState(
+    const [searchValue, setSearchValue] = useState<string>(
         sessionStorage.getItem("searchText") || ""
     );
     const [getSearchData, { data: searchData, isLoading, isError }] =

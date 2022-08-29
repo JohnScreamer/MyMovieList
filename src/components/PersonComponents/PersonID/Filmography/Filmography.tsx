@@ -12,7 +12,7 @@ type FilmographyType = {
     byDate: Array<Cast>;
 };
 const Filmography: FC<FilmographyType> = ({ hightRating, byDate }) => {
-    const [sortByTime, setSortStatus] = useState(true);
+    const [sortByTime, setSortStatus] = useState<boolean>(true);
     const sortType = sortByTime ? byDate : hightRating;
     const { t } = useTranslation();
     const list = sortType.map((el) => (

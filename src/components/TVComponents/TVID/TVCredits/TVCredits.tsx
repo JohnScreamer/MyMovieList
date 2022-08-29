@@ -31,7 +31,7 @@ const TVCredits: FC<TVCreditsType> = ({ id }) => {
     const status = !!Number(qs.parse(location?.search.slice(1))?.credits);
     const language = useAppSelector(selectApiLanguage);
     const param = useAppSelector(selectorApiOptions);
-    const [portalStatus, setPortalStatus] = useState(status || false);
+    const [portalStatus, setPortalStatus] = useState<boolean>(status || false);
     const navigate = useNavigate();
     const handlerPortalStatus = (status: boolean) => {
         navigate(`${location.pathname}?credits=${status ? 1 : 0}`, {});

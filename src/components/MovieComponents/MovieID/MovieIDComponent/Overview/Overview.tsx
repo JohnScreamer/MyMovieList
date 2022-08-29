@@ -8,7 +8,7 @@ type OverviewType = {
     tv?: TVType;
 };
 const Overview: FC<OverviewType> = ({ movie, tv }) => {
-    const [showText, setTextStatus] = useState(false);
+    const [showText, setTextStatus] = useState<boolean>(false);
     const { t } = useTranslation();
 
     if (!(movie?.overview || tv?.overview)) {

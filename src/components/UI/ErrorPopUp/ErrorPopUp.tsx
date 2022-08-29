@@ -7,7 +7,7 @@ type ErrorPopUpType = {
     isError?: boolean;
 };
 const ErrorPopUp: FC<ErrorPopUpType> = ({ text, isError }) => {
-    const [popUpStatus, setStatus] = useState(false);
+    const [popUpStatus, setStatus] = useState<boolean>(false);
     if (popUpStatus) {
         return null;
     }

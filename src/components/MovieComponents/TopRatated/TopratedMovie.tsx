@@ -13,7 +13,7 @@ const TopratedMovie = () => {
     const apiParam = useAppSelector(selectorApiOptions);
     const language = useAppSelector(selectApiLanguage);
     const [data, setData] = useState<DiscoveryMovieResponse | null>(null);
-    const [isError, setError] = useState(false);
+    const [isError, setError] = useState<boolean>(false);
     // const { data, isError, isLoading } = useMovieDiscoverQuery({
     //     param: {
     //         ...apiParam,

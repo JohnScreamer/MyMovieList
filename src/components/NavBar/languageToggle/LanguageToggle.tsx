@@ -13,7 +13,7 @@ type LanguageToggleType = {
 const LanguageToggle: FC<LanguageToggleType> = ({ mobile }) => {
     const currentLanguage = useAppSelector(selectorLanguage);
     const dispatch = useAppDispatch();
-    const [langStatus, setLangStatus] = useState(false);
+    const [langStatus, setLangStatus] = useState<boolean>(false);
     const handlerLangStatus = () => {
         setLangStatus((prev) => !prev);
     };

@@ -1,10 +1,5 @@
-import React, { FC, memo } from "react";
-import {
-    ISearchData,
-    ISearchMovie,
-    ISearchPerson,
-    ISearchTV,
-} from "../../../Types/common";
+import { FC, memo } from "react";
+import { ISearchData } from "../../../Types/common";
 import SearchMovie from "../../cards/SearchCard/SearchMovie/SearchMovie";
 import SearchTV from "../../cards/SearchCard/SearchTV/SearchTV";
 import SearchPerson from "../../cards/SearchCard/SearchPerson/SearchPerson";
@@ -13,8 +8,6 @@ import ErrorIcon from "@mui/icons-material/Error";
 import Pagination from "@mui/material/Pagination/Pagination";
 import Stack from "@mui/material/Stack/Stack";
 import { useTranslation } from "react-i18next";
-import { Skeleton } from "@mui/material";
-import Loader from "./../../../static/img/svg/Spinner-1s-200px.svg";
 import Spiner from "../../UI/Spiner/Spiner";
 type SearchListType = {
     searchData: ISearchData;
@@ -34,7 +27,7 @@ const SearchList: FC<SearchListType> = memo(
         totalFindElem,
         isLoading,
     }) => {
-        let searchList;
+        let searchList: any;
         switch (searchData.mediaType) {
             case "tv":
                 searchList = searchData.searchData?.results.map((el: any) => (
