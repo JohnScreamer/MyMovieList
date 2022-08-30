@@ -1,0 +1,22 @@
+@import "./../../../static/SCSS/Mixin.scss";
+.wrapper {
+    position: absolute;
+    z-index: 22222;
+    top: 25vh;
+
+    font-size: 66px;
+    @include adaptive-value("font-size", 66, 35);
+    font-weight: 900;
+    color: var(--color-accent);
+    background: var(--color-tab-basic);
+    padding: 6px;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .wrapper {
+        top: 45%;
+    }
+}

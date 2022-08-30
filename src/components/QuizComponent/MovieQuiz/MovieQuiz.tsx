@@ -11,6 +11,7 @@ import ErrorPopUp from "../../UI/ErrorPopUp/ErrorPopUp";
 import Spiner from "../../UI/Spiner/Spiner";
 import FirstSlide from "../FirstSlide/FirstSlide";
 import QuizStats from "../QuizStats/QuizStats";
+import QuizVS from "../QuizVS/QuizVS";
 import QuizWinner from "../QuizWinner/QuizWinner";
 import SecondSlide from "../SecondSlide/SecondSlide";
 import s from "./MovieQuiz.module.scss";
@@ -60,6 +61,7 @@ const MovieQuiz: FC<MovieQuizType> = ({ url, title }) => {
                 <QuizStats />
                 <div className={s.wrapper}>
                     <FirstSlide />
+                    <QuizVS />
                     <SecondSlide />
                     <QuizWinner />
                 </div>
