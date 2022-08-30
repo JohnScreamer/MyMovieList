@@ -4,6 +4,7 @@ import HomePage from "../../pages/HomePage/HomePage";
 import MoviesPage from "../../pages/MoviesPage/MoviesPage";
 import Page404 from "../../pages/Page404/Page404";
 import PersonsPage from "../../pages/PersonsPage/PersonsPage";
+import QuizPage from "../../pages/QuizPage/QuizPage";
 import SearchPage from "../../pages/SearchPage/SearchPage";
 import TVsPage from "../../pages/TVsPage/TVsPage";
 
@@ -15,6 +16,8 @@ const Content = () => {
                 <Route path="/search" element={<SearchPage />} />
                 <Route path="/movie/*" element={<MoviesPage />} />
                 <Route path="/tv/*" element={<TVsPage />} />
+                <Route path="/quiz/*" element={<QuizPage />} />
+
                 <Route path="/person/*" element={<PersonsPage />} />
                 <Route path="*" element={<Page404 />} />
             </Routes>

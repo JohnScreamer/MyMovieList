@@ -1,0 +1,52 @@
+@import "./../../../static/SCSS/Mixin.scss";
+.winnerWrapper {
+    img {
+        object-fit: cover;
+        position: absolute;
+        filter: blur(8px);
+        -webkit-filter: blur(8px);
+    }
+}
+.container {
+    width: 100%;
+    height: 60vh;
+    position: relative;
+    background: black;
+    position: absolute;
+    z-index: 3000;
+}
+.info {
+    position: absolute;
+    top: 20%;
+
+    h3 {
+        font-size: 55px;
+        @include adaptive-value("font-size", 55, 22);
+        font-weight: 900;
+        margin-bottom: 15px;
+    }
+    z-index: 2;
+    display: inline-flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background: var(--color-tab-basic);
+    svg {
+    }
+    a {
+        margin: 7px;
+        padding: 7px;
+        font-size: 16px;
+        border: 2px solid var(--color-accent);
+        &:hover {
+            background: var(--color-accent);
+        }
+    }
+}
+@media (max-width: 768px) {
+    .container {
+        height: 100%;
+    }
+}

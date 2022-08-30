@@ -65,4 +65,5 @@ export const EN = {
     Popular: "Popular:",
     NOTFOUND: "PAGE NOT FOUND",
     staff: "Staff",
+    quiz: "Quiz",
 };

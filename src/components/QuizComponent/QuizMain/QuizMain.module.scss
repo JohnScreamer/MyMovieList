@@ -1,0 +1,49 @@
+@import "./../../../static/SCSS/Mixin.scss";
+.wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    a {
+        position: relative;
+        display: block;
+        width: 50%;
+        overflow: hidden;
+        height: 50%;
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s 0s ease;
+        &:hover {
+            transition: all 0.5s 0s ease;
+            h2 {
+                transition: all 0.5s 0s ease;
+                background: var(--color-accent);
+                transform: rotate(4deg);
+            }
+            img {
+                transition: all 0.5s 0s ease;
+                filter: blur(0px);
+                -webkit-filter: blur(0px);
+            }
+        }
+
+        img {
+            position: absolute;
+            object-fit: cover;
+            filter: blur(8px);
+            -webkit-filter: blur(8px);
+        }
+        h2 {
+            background: var(--color-tab-basic);
+
+            padding: 25px;
+            text-align: center;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+    }
+}

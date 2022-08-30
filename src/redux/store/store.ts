@@ -2,11 +2,13 @@ import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 
 import { KinoList } from "../RTQK/KinoList";
 import GlobalOptionsSlice from "../slice/GlobalOptionsSlice";
+import QuizSlice from "../slice/QuizSlice";
 
 export const store = configureStore({
     reducer: {
         [KinoList.reducerPath]: KinoList.reducer,
         globalOptions: GlobalOptionsSlice,
+        quiz: QuizSlice,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(KinoList.middleware),

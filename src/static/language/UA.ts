@@ -65,6 +65,7 @@ export const UA = {
     Popular: "Популярні:",
     NOTFOUND: "СТОРІНКУ НЕ ЗНАЙДЕНО",
     staff: "Персонал",
+    quiz: "Вікторина",
 };
 
 export const monthUA = [

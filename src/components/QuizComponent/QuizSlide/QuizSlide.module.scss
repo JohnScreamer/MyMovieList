@@ -1,0 +1,45 @@
+@import "./../../../static//SCSS//Mixin.scss";
+.quizWrapper {
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    box-shadow: 15px 15px 40px black;
+    height: 60vh;
+    overflow: hidden;
+    transition: all 0.5s 0s ease;
+
+    &:hover {
+        box-shadow: 2px 2px 10px black;
+        transition: all 0.5s 0s ease;
+
+        h2 {
+            transition: all 0.5s 0s ease;
+            background: linear-gradient(0deg, var(--color-accent) 24%, rgba(253, 187, 45, 0) 100%);
+        }
+    }
+
+    img {
+        position: absolute;
+        object-fit: cover;
+    }
+    h2 {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        z-index: 50;
+        width: 100%;
+        font-size: 25px;
+        @include adaptive-value("font-size", 25, 16);
+        text-align: center;
+        height: 150px;
+        background: linear-gradient(0deg, var(--color-background) 35%, rgba(253, 187, 45, 0) 101%);
+        padding: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .quizWrapper {
+        height: 40vh;
+    }
+}

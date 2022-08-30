@@ -9,6 +9,7 @@ const HomeHeader = () => {
             <NavLink to={"/movie"}>{t("movies")}</NavLink>
             <NavLink to={"/tv"}>{t("tvShow")}</NavLink>
             <NavLink to={"/person"}>{t("persons")}</NavLink>
+            <NavLink to={"/quiz"}>{t("quiz")}</NavLink>
         </header>
     );
 };

@@ -19,3 +19,7 @@ export const selectIsSlideActive = (state: RootState) =>
 export const selectZoomImg = (state: RootState) => state.globalOptions.zoomImg;
 export const selectPortalStatus = (state: RootState) =>
     state.globalOptions.portalStatus;
+export const selectFirstSlide = (state: RootState) => state.quiz.firstSlide;
+export const selectSecondSlide = (state: RootState) => state.quiz.secondSlide;
+export const selectQuizArr = (state: RootState) => state.quiz.slideArray;
+export const selectWinnerSlide = (state: RootState) => state.quiz.winnerSlide;
