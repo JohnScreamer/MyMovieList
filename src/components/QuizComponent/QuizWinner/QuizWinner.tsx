@@ -9,7 +9,9 @@ import NO_PICTURE from "./../../../static/img/noPOSTERFILM.jpg";
 import s from "./QuizWinner.module.scss";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import LazyLoadImg from "../../UI/LazyLoadImg/LazyLoadImg";
+
 import { useTranslation } from "react-i18next";
+import Confeti from "../Confeti/Confeti";
 const QuizWinner = () => {
     const winner = useAppSelector(selectWinnerSlide);
     const navigate = useNavigate();
@@ -29,8 +31,10 @@ const QuizWinner = () => {
                     <LazyLoadImg src={poster} />
                 </div>
                 <div className={s.info}>
+                    <Confeti />
                     <EmojiEventsIcon width={150} height={150} />
                     <h1>{t("winner")}</h1>
+
                     <h3>{winner.name ? winner.name : winner.title}</h3>
                     <Link to={"/"}>{t("home")} </Link>
                     <Link to={"/quiz"}>{t("quizPage")}</Link>
