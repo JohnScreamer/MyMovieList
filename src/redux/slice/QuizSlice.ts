@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { shuffle } from "../../features/shuffle";
 import { GetListItemsType } from "../../Types/GetListType";
 
 export type initialStateType = {
@@ -40,7 +41,7 @@ const Quiz = createSlice({
             state,
             action: PayloadAction<Array<GetListItemsType>>
         ) => {
-            state.slideArray = action.payload;
+            state.slideArray = shuffle(action.payload);
         },
         resetQuiz: (state) => {
             state.firstSlide = null;
