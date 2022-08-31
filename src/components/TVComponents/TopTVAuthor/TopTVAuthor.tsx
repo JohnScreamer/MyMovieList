@@ -4,6 +4,7 @@ import {
     selectorApiOptions,
     selectApiLanguage,
 } from "../../../selectors/GlobalOptions";
+import { AUTHOR_TV_ID } from "../../../static/constants/URL";
 import { useAppSelector } from "../../../static/hooks/hooks";
 import DiscoverCard from "../../cards/DiscoverCard/DiscoverCard";
 import ErrorPopUp from "../../UI/ErrorPopUp/ErrorPopUp";
@@ -18,7 +19,7 @@ const TopTVAuthor = () => {
             ...apiParam,
             language: language,
         },
-        url: "8213566",
+        url: AUTHOR_TV_ID,
     });
     const onAirTV = data?.items.map((el, id) => (
         <DiscoverCard tv={el} key={id} />

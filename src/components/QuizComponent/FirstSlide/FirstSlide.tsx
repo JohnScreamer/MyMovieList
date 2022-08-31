@@ -5,6 +5,7 @@ import {
     switchSecondSlide,
 } from "../../../redux/slice/QuizSlice";
 import {
+    selectApiLanguage,
     selectFirstSlide,
     selectWinnerSlide,
 } from "../../../selectors/GlobalOptions";
@@ -14,9 +15,10 @@ import s from "./FirstSlide.module.scss";
 const FirstSlide = () => {
     const data = useAppSelector(selectFirstSlide);
     const dispatch = useAppDispatch();
+    const lang = useAppSelector(selectApiLanguage);
     useEffect(() => {
         dispatch(switchFirstSlide());
-    }, []);
+    }, [lang]);
 
     const handlerChoseSlide = () => {
         dispatch(switchSecondSlide());

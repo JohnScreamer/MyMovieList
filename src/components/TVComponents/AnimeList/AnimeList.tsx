@@ -4,6 +4,7 @@ import {
     selectorApiOptions,
     selectApiLanguage,
 } from "../../../selectors/GlobalOptions";
+import { AUTHOR_ANIME_ID } from "../../../static/constants/URL";
 import { useAppSelector } from "../../../static/hooks/hooks";
 import DiscoverCard from "../../cards/DiscoverCard/DiscoverCard";
 import ErrorPopUp from "../../UI/ErrorPopUp/ErrorPopUp";
@@ -17,7 +18,7 @@ const AnimeList = () => {
             ...apiParam,
             language: language,
         },
-        url: "8213563",
+        url: AUTHOR_ANIME_ID,
     });
     const animeList = data?.items.map((el, id) => (
         <DiscoverCard tv={el} key={el.id} />

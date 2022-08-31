@@ -9,9 +9,11 @@ import NO_PICTURE from "./../../../static/img/noPOSTERFILM.jpg";
 import s from "./QuizWinner.module.scss";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import LazyLoadImg from "../../UI/LazyLoadImg/LazyLoadImg";
+import { useTranslation } from "react-i18next";
 const QuizWinner = () => {
     const winner = useAppSelector(selectWinnerSlide);
     const navigate = useNavigate();
+    const { t } = useTranslation();
     if (!winner) {
         return null;
     }
@@ -28,10 +30,10 @@ const QuizWinner = () => {
                 </div>
                 <div className={s.info}>
                     <EmojiEventsIcon width={150} height={150} />
-                    <h1>Winner</h1>
+                    <h1>{t("winner")}</h1>
                     <h3>{winner.name ? winner.name : winner.title}</h3>
-                    <Link to={"/"}>Home </Link>
-                    <Link to={"/quiz"}>Quiz page</Link>
+                    <Link to={"/"}>{t("home")} </Link>
+                    <Link to={"/quiz"}>{t("quizPage")}</Link>
                 </div>
             </div>
         </div>

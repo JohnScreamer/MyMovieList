@@ -66,4 +66,8 @@ export const EN = {
     NOTFOUND: "PAGE NOT FOUND",
     staff: "Staff",
     quiz: "Quiz",
+    quizPage: "Quiz page",
+    winner: "Winner",
+    nomLeft: "Nominees left",
+    Anime: "Anime",
 };

@@ -66,6 +66,10 @@ export const UA = {
     NOTFOUND: "СТОРІНКУ НЕ ЗНАЙДЕНО",
     staff: "Персонал",
     quiz: "Вікторина",
+    quizPage: "Сторінка вікторини",
+    winner: "Переможець",
+    nomLeft: "Номінантів залишилось",
+    Anime: "Аніме",
 };
 
 export const monthUA = [

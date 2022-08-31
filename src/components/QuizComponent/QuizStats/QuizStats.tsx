@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import {
     selectQuizArr,
     selectWinnerSlide,
@@ -9,16 +10,21 @@ import s from "./QuizStats.module.scss";
 const QuizStats = () => {
     const arr = useAppSelector(selectQuizArr);
     const winner = useAppSelector(selectWinnerSlide);
+    const { t } = useTranslation();
     if (winner) {
         return (
             <div className={s.wrapper}>
-                <h3>Winner: {winner.name ? winner.name : winner.title}</h3>
+                <h3>
+                    {t("winner")}: {winner.name ? winner.name : winner.title}
+                </h3>
             </div>
         );
     }
     return (
         <div className={s.wrapper}>
-            <h3>Nominees left:{arr.length + 2}</h3>
+            <h3>
+                {t("nomLeft")}:{arr.length + 2}
+            </h3>
         </div>
     );
 };

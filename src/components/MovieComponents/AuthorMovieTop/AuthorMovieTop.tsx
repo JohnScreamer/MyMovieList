@@ -4,6 +4,7 @@ import {
     selectorApiOptions,
     selectApiLanguage,
 } from "../../../selectors/GlobalOptions";
+import { AUTHOR_MOVIES_ID } from "../../../static/constants/URL";
 import { useAppSelector } from "../../../static/hooks/hooks";
 import { DiscoveryMovie } from "../../../Types/DiscoveryType";
 import DiscoverCard from "../../cards/DiscoverCard/DiscoverCard";
@@ -18,7 +19,7 @@ const AuthorMovieTop = () => {
             ...apiParam,
             language: language,
         },
-        url: "8213603",
+        url: AUTHOR_MOVIES_ID,
     });
     const MovieList = data?.items.map((el, id) => (
         <DiscoverCard movie={el as DiscoveryMovie} key={id} />
