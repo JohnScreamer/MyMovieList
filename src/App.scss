@@ -131,3 +131,80 @@
         }
     }
 }
+.my-first-enter {
+    opacity: 0;
+    animation: myAnim 400ms ease 0s 1 normal forwards;
+}
+.my-first-enter-active {
+    opacity: 1;
+    transition: opacity 400ms;
+}
+.my-first-exit {
+    opacity: 1;
+    animation: animBack 400ms ease 0s 1 normal forwards;
+}
+.my-first-exit-active {
+    opacity: 0;
+    transition: opacity 400ms;
+}
+
+@keyframes myAnim {
+    0% {
+        opacity: 0;
+        transform: translateX(-650px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes animBack {
+    0% {
+        opacity: 0;
+        transform: translateX(0px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(-650px);
+    }
+}
+.my-second-enter {
+    opacity: 0;
+    animation: myAnimSecond 400ms ease 0s 1 normal forwards;
+}
+.my-second-enter-active {
+    opacity: 1;
+    transition: opacity 400ms;
+}
+.my-second-exit {
+    opacity: 1;
+    animation: animBackSecond 400ms ease 0s 1 normal forwards;
+}
+.my-second-exit-active {
+    opacity: 0;
+    transition: opacity 400ms;
+}
+@keyframes myAnimSecond {
+    0% {
+        opacity: 0;
+        transform: translateX(650px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes animBackSecond {
+    0% {
+        opacity: 0;
+        transform: translateX(0px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(650px);
+    }
+}

@@ -5,23 +5,22 @@
     display: flex;
     flex-wrap: wrap;
 
-    a {
+    .button {
         position: relative;
         display: block;
         width: 50%;
         overflow: hidden;
         height: 50%;
-        padding: 5px;
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
         transition: all 0.5s 0s ease;
         &:hover {
             transition: all 0.5s 0s ease;
             h2 {
                 transition: all 0.5s 0s ease;
                 background: var(--color-accent);
-                transform: rotate(4deg);
             }
             img {
                 transition: all 0.5s 0s ease;
@@ -40,10 +39,26 @@
             background: var(--color-tab-basic);
 
             padding: 25px;
+            @include adaptive-value("padding", 25, 15);
             text-align: center;
             width: 100%;
             position: relative;
             z-index: 2;
+        }
+    }
+}
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 15px;
+        .button {
+            padding: 0px;
+
+            width: 100%;
+            img {
+                transition: all 0.5s 0s ease;
+                filter: blur(0px);
+                -webkit-filter: blur(0px);
+            }
         }
     }
 }

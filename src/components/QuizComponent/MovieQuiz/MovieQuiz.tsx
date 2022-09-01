@@ -1,11 +1,18 @@
 import React, { FC, useEffect, useRef } from "react";
 import { useGetListQuery } from "../../../redux/RTQK/KinoList";
-import { resetQuiz, setSlideArray } from "../../../redux/slice/QuizSlice";
+import {
+    resetQuiz,
+    setSlideArray,
+    setStartSlide,
+    startGame,
+} from "../../../redux/slice/QuizSlice";
 import {
     selectorApiOptions,
     selectApiLanguage,
     selectQuizArr,
     selectWinnerSlide,
+    selectGameMode,
+    selectIsGameStart,
 } from "../../../selectors/GlobalOptions";
 import { useAppDispatch, useAppSelector } from "../../../static/hooks/hooks";
 import ErrorPopUp from "../../UI/ErrorPopUp/ErrorPopUp";
@@ -27,7 +34,8 @@ const MovieQuiz: FC<MovieQuizType> = ({ url, title }) => {
     const apiParam = useAppSelector(selectorApiOptions);
     const language = useAppSelector(selectApiLanguage);
     const dispatch = useAppDispatch();
-
+    const isGameStart = useAppSelector(selectIsGameStart);
+    const gameMode = useAppSelector(selectGameMode);
     const slideArr = useAppSelector(selectQuizArr);
 
     const { data, isLoading, isError, isSuccess } = useGetListQuery({
@@ -39,9 +47,16 @@ const MovieQuiz: FC<MovieQuizType> = ({ url, title }) => {
     });
     useEffect(() => {
         if (data) {
-            dispatch(setSlideArray(data.items));
+            gameMode === "kingMountain"
+                ? dispatch(setSlideArray(data.items))
+                : dispatch(startGame(data.items));
         }
     }, [data]);
+    useEffect(() => {
+        if (isGameStart) {
+            dispatch(setStartSlide());
+        }
+    }, [isGameStart]);
     useEffect(() => {
         return () => {
             dispatch(resetQuiz());

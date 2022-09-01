@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Img } from "../../UI/Img/ImgWrapper";
 import s from "./QuizMain.module.scss";
@@ -7,22 +7,17 @@ import tv from "./../../../static/img/quiz/game-of-thrones-e1552846351168.webp";
 import anime from "./../../../static/img/quiz/Attack-on-Titan-4.webp";
 import LazyLoadImg from "../../UI/LazyLoadImg/LazyLoadImg";
 import { useTranslation } from "react-i18next";
+import PortalWindow from "../../UI/PortalWindow/PortalWindow";
+import GameMode from "../GameMode/GameMode";
+import QuizBlock from "./QuizBlock";
 const QuizMain = () => {
     const { t } = useTranslation();
+
     return (
         <div className={s.wrapper}>
-            <Link to={"/quiz/movie"}>
-                <LazyLoadImg src={movie} />
-                <h2>{t("movie")}</h2>
-            </Link>
-            <Link to={"/quiz/tv"}>
-                <LazyLoadImg src={tv} />
-                <h2>{t("tv")}</h2>
-            </Link>
-            <Link to={"/quiz/anime"}>
-                <LazyLoadImg src={anime} />
-                <h2>{t("Anime")}</h2>
-            </Link>
+            <QuizBlock to="movie" movie={movie} text={t("movie")} />
+            <QuizBlock to="tv" movie={tv} text={t("tv")} />
+            <QuizBlock to="anime" movie={anime} text={t("Anime")} />
         </div>
     );
 };

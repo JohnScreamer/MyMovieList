@@ -70,4 +70,8 @@ export const EN = {
     winner: "Winner",
     nomLeft: "Nominees left",
     Anime: "Anime",
+    kingMount: "King of the mountain mode",
+    classic: "Classic mode",
+    stage: "stage",
+    final: "FInal",
 };

@@ -23,7 +23,6 @@ const LazyLoadImg: FC<LazyLoadImgType> = ({ src, zoom, width, height }) => {
     const handlerLoad = () => {
         setLoadingStatus(true);
         setLoadStart(false);
-        console.log(isLoading);
     };
     const handlerError = () => {
         setError(true);

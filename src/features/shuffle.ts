@@ -18,5 +18,6 @@ export function shuffle(arr: Array<GetListItemsType>): Array<GetListItemsType> {
         arr2[j] = arr2[k];
         arr2[k] = t;
     }
+
     return arr2;
 }

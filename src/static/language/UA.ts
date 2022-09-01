@@ -70,6 +70,10 @@ export const UA = {
     winner: "Переможець",
     nomLeft: "Номінантів залишилось",
     Anime: "Аніме",
+    kingMount: "Режим царь гори",
+    classic: "Класичний режим",
+    stage: "стадія",
+    final: "Фінал",
 };
 
 export const monthUA = [
