@@ -6,6 +6,8 @@
     h3 {
         font-size: 25px;
         @include adaptive-value("font-size", 25, 14);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        text-transform: capitalize;
         margin-bottom: 25px;
         @include adaptive-value("margin-bottom", 25, 15);
     }

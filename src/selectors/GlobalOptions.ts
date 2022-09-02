@@ -27,5 +27,8 @@ export const selectGameMode = (state: RootState) => state.quiz.gameMode;
 export const selectIsGameStart = (state: RootState) => state.quiz.isGameStart;
 export const selectWinnerArr = (state: RootState) => state.quiz.winnerArr;
 export const selectStage = (state: RootState) => state.quiz.stage;
-export const selectAnimStatusFirst = (state: RootState) => state.quiz.firstSlideAnimationStatus;
-export const selectAnimStatusSecond = (state: RootState) => state.quiz.secondSlideAnimationStatus;
+export const selectISFinale = (state: RootState) => state.quiz.isFinal;
+export const selectAnimStatusFirst = (state: RootState) =>
+    state.quiz.firstSlideAnimationStatus;
+export const selectAnimStatusSecond = (state: RootState) =>
+    state.quiz.secondSlideAnimationStatus;

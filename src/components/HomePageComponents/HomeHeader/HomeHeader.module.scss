@@ -9,6 +9,8 @@
         margin: 25px;
         @include adaptive-value("margin", 25, 10);
         border-bottom: 1px solid none;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
         &:hover {
             border-bottom: 1px solid var(--color-accent);
         }

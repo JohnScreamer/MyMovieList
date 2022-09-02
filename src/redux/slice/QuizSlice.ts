@@ -16,6 +16,7 @@ export type initialStateType = {
     stage: number | null;
     firstSlideAnimationStatus: boolean;
     secondSlideAnimationStatus: boolean;
+    isFinal: boolean;
 };
 
 const initialState: initialStateType = {
@@ -29,6 +30,7 @@ const initialState: initialStateType = {
     stage: null,
     firstSlideAnimationStatus: false,
     secondSlideAnimationStatus: false,
+    isFinal: false,
 };
 
 const Quiz = createSlice({
@@ -77,6 +79,7 @@ const Quiz = createSlice({
             if (pickSlide) {
                 state.winnerArr = [...state.winnerArr, pickSlide];
             }
+
             if (state.slideArray.length === 0) {
                 // state.winnerArr = [...state.winnerArr, state.slideArray[0]];
 
@@ -91,9 +94,11 @@ const Quiz = createSlice({
                     state.winnerArr.length
                 );
             }
-
-            state.firstSlide = state.slideArray.splice(0, 1)[0];
             state.secondSlide = state.slideArray.splice(0, 1)[0];
+            state.firstSlide = state.slideArray.splice(0, 1)[0];
+            if (state.slideArray.length === 0 && state.winnerArr.length === 0) {
+                state.isFinal = true;
+            }
         },
         startGame: (state, action: PayloadAction<Array<GetListItemsType>>) => {
             state.slideArray = shuffle(action.payload);
@@ -117,6 +122,8 @@ const Quiz = createSlice({
                 state.firstSlideAnimationStatus = action.payload.status;
                 return;
             }
+            console.log(action.payload);
+
             state.secondSlideAnimationStatus = action.payload.status;
         },
     },

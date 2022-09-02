@@ -37,7 +37,8 @@
         }
         h2 {
             background: var(--color-tab-basic);
-
+            font-size: 20px;
+            @include adaptive-value("font-size", 20, 16);
             padding: 25px;
             @include adaptive-value("padding", 25, 15);
             text-align: center;
@@ -50,6 +51,7 @@
 @media (max-width: 768px) {
     .wrapper {
         padding: 15px;
+        overflow: scroll;
         .button {
             padding: 0px;
 

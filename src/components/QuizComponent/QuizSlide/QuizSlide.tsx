@@ -9,7 +9,10 @@ import s from "./QuizSlide.module.scss";
 import NO_PICTURE from "./../../../static/img/noPOSTERFILM.jpg";
 import classNames from "classnames";
 import { useAppDispatch, useAppSelector } from "../../../static/hooks/hooks";
-import { selectWinnerSlide } from "../../../selectors/GlobalOptions";
+import {
+    selectISFinale,
+    selectWinnerSlide,
+} from "../../../selectors/GlobalOptions";
 import LazyLoadImg from "../../UI/LazyLoadImg/LazyLoadImg";
 import { CSSTransition } from "react-transition-group";
 import { setAnimStatus } from "../../../redux/slice/QuizSlice";
@@ -23,13 +26,14 @@ const QuizSlide: FC<QuizSlideType> = ({ data, onClick, animStatus, num }) => {
     const poster = data.backdrop_path
         ? MEDIUM_BACKGROUND_URL + data.backdrop_path
         : NO_PICTURE;
-
+    const isFinale = useAppSelector(selectISFinale);
+    const rerenderTrigger = isFinale ? isFinale : data;
     const dispatch = useAppDispatch();
     useEffect(() => {
         dispatch(setAnimStatus({ slide: num, status: true }));
 
         return () => {};
-    }, [data]);
+    }, [rerenderTrigger]);
 
     return (
         <>

@@ -33,6 +33,7 @@ const SecondSlide = () => {
     const clickClassicMode = () => {
         dispatch(setAnimStatus({ status: false, slide: "second" }));
         dispatch(setAnimStatus({ status: false, slide: "first" }));
+
         setTimeout(() => {
             dispatch(choseSlide("secondSlide"));
         }, 400);

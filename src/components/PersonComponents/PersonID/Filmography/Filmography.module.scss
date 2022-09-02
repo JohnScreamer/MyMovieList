@@ -10,6 +10,33 @@
         @include adaptive-value("font-size", var(--fs-bold), var(--fs-boldM));
         font-weight: 900;
         text-align: center;
+        position: relative;
+        padding-bottom: 5px;
+        display: table;
+        width: auto;
+        margin: 0 auto;
+        margin-top: 5px;
+        letter-spacing: 2px;
+    }
+    h2:before {
+        content: "";
+        position: absolute;
+        top: -25%;
+        left: -10px;
+        width: 30px;
+        height: 20px;
+        border-top: 2px solid var(--color-accent);
+        border-left: 2px solid var(--color-accent);
+    }
+    h2:after {
+        content: "";
+        position: absolute;
+        bottom: -10%;
+        right: -10px;
+        width: 30px;
+        height: 20px;
+        border-bottom: 2px solid var(--color-accent);
+        border-right: 2px solid var(--color-accent);
     }
 }
 .row {
@@ -26,12 +53,15 @@
         line-height: 130%;
         max-width: 300px;
         @include adaptive-value("max-width", 300, 100);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         width: 100%;
+
         border-right: 1px solid var(--color-border);
         &:hover {
             color: var(--color-accent);
         }
     }
+
     .time {
         margin-right: auto;
     }

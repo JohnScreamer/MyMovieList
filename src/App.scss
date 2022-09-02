@@ -89,6 +89,9 @@
     }
 }
 @media (max-width: 768px) {
+    .App {
+        padding-bottom: 50px;
+    }
     .App main .content {
         padding-left: 0px;
     }
